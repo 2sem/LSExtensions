@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "LSExtensions"
   s.version      = "0.0.1"
+  s.swift_version = "4.1"
   s.summary      = "Collection of Usable Extension."
 
   # This description is used to generate tags and improve search results.
@@ -39,9 +40,13 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
+=begin
+  s.license      = { :type => "MIT", :text => <<-LICENSE
+      Copyright 2018 @ leesam
+      LICENSE
+  }
+=end
+    s.license      = { :type => "MIT", :file => "LICENSE" }
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
