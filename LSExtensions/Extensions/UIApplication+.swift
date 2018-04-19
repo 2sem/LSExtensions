@@ -8,10 +8,14 @@
 
 import Foundation
 import UIKit
-//import FBSDKCoreKit
 
 extension UIApplication{
-    var appId : String{
+    /**
+        Value of property nameed of 'Itunes App Id' in Info.plist
+        - Requires: Property 'Itunes App Id' in Info.plist
+        - Note: this property is used in openReview(_: , completion: )
+     */
+    public var appId : String{
         get{
             guard let value = Bundle.main.infoDictionary?["Itunes App Id"] as? String else{
                 preconditionFailure("Add 'Itunes App Id' info Info.plist.");
@@ -21,7 +25,10 @@ extension UIApplication{
         }
     }
     
-    var displayName : String?{
+    /**
+        Value of property named of 'CFBundleDisplayName' in Info.plist
+    */
+    public var displayName : String?{
         get{
             var value = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String;
             if value == nil{
@@ -32,7 +39,10 @@ extension UIApplication{
         }
     }
     
-    var version : String{
+    /**
+        Value of property named of 'CFBundleShortVersionString' in Info.plist
+     */
+    public var version : String{
         get{
             var value = Bundle.main.localizedInfoDictionary?["CFBundleShortVersionString"] as? String;
             if value == nil{
@@ -43,30 +53,49 @@ extension UIApplication{
         }
     }
     
-    var isIPhone : Bool{
+    /**
+        Is kind of Current Device iPhone?
+    */
+    public var isIPhone : Bool{
         get{
             return UIDevice().userInterfaceIdiom == .phone;
         }
     }
     
+    /**
+        Url for Itunes Link for this App
+     */
     var urlForItunes : URL{
         get{
-            return URL(string :"https://itunes.apple.com/kr/app/democracyaction/id\(self.appId)?l=ko&mt=8")!;
+            return URL(string :"https://itunes.apple.com/kr/app/myapp/id\(self.appId)?l=ko&mt=8")!;
         }
     }
     
-    func openItunes(){
+    /**
+        Open AppStore for this App
+    */
+    public func openItunes(){
         self.open(self.urlForItunes, options: [:], completionHandler: nil) ;
     }
     
-    public func openReview(_ appId : String = "", completion: ((Bool) -> Void)? = nil){
+    /**
+        Open Review Page for this App on AppStore
+        - parameter appId: App ID for Review Page
+        - parameter completion: block to call after opening review has been completed
+        - parameter result: hoho siba
+    */
+    public func openReview(_ appId : String = "", completion: ((_ result: Bool) -> Void)? = nil){
         let appId = appId.isEmpty ? self.appId : appId;
         let rateUrl = URL(string: "https://itunes.apple.com/app/myapp/id\(appId)?mt=8&action=write-review");
-        
+    
         self.open(rateUrl!, options: [:], completionHandler: completion);
     }
     
-    func openTwitter(_ id : String){
+    /**
+        Open Page of specified User on Twitter App
+        - parameter id: Twitter Account Name
+    */
+    public func openTwitter(_ id : String){
         var twitterUrl = URL(string: "twitter://user?screen_name=\(id)")!;
         if self.canOpenURL(twitterUrl){
             self.open(twitterUrl, options: [:], completionHandler: nil);
@@ -76,17 +105,15 @@ extension UIApplication{
         }
     }
     
-    func openFacebook(_ id : String){
-        //var facebookAppUrl = URL(string: "fb://profile/\(id)")!;
+    /**
+        Open Page of specified User on Facebook App
+        - parameter id: FaceBook id converted number by [Find my Facebook ID](www.findmyfbid.com)
+    */
+    public func openFacebook(_ id : String){
         var facebookUrl = URL(string: "fb://profile/\(id)")!;
 
         if self.canOpenURL(facebookUrl){
             self.open(facebookUrl, options: [:], completionHandler: nil);
-            /*var req = URLRequest(url: facebookUrl);
-            URLSession.shared.dataTask(with: req) { (data, res, err) in
-                print("facebook request. data[\(data)] res[\(res)] error[\(err)]");
-            }.resume();*/
-            
         }else{
             facebookUrl = URL(string: "https://www.facebook.com/\(id)")!;
             self.open(facebookUrl, options: [:], completionHandler: nil);
@@ -97,29 +124,45 @@ extension UIApplication{
         }*/
     }
     
-    func openWeb(_ urlString : String){
-        var Url = URL(string: urlString)!;
+    /**
+        Open Safari with specified string as url
+        - Parameter urlString: url to open with Safari
+    */
+    public func openWeb(_ urlString : String){
+        let Url = URL(string: urlString)!;
         if self.canOpenURL(Url){
             self.open(Url, options: [:], completionHandler: nil);
         }
     }
     
-    func openEmail(_ email : String){
-        var Url = URL(string: "mailto:\(email)")!;
+    /**
+        Open Mail App with specified email
+        - Parameter email: E-mail address to open with Mail App
+    */
+    public func openEmail(_ email : String){
+        let Url = URL(string: "mailto:\(email)")!;
         if self.canOpenURL(Url){
             self.open(Url, options: [:], completionHandler: nil);
         }
     }
     
-    func openSms(_ sms : String){
-        var Url = URL(string: "sms:\(sms)")!;
+    /**
+        Open Message App with specified phone number
+     - Parameter sms: Phone Number to open with Message App
+    */
+    public func openSms(_ sms : String){
+        let Url = URL(string: "sms:\(sms)")!;
         if self.canOpenURL(Url){
             self.open(Url, options: [:], completionHandler: nil);
         }
     }
     
-    func openTel(_ phone : String){
-        var Url = URL(string: "tel:\(phone)")!;
+    /**
+        Call to specified phone number
+     - Parameter phone: Phone number to call
+    */
+    public func openTel(_ phone : String){
+        let Url = URL(string: "tel:\(phone)")!;
         if self.canOpenURL(Url){
             self.open(Url, options: [:], completionHandler: nil);
         }
