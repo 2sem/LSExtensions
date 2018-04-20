@@ -13,6 +13,8 @@
 		2C75E7C42087900700F1EFE2 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C75E7C32087900600F1EFE2 /* UIApplication+.swift */; };
 		2CA5B4302089DF8B008DE954 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B42F2089DF8A008DE954 /* Int+.swift */; };
 		2CA5B432208A1F5F008DE954 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B431208A1F5F008DE954 /* String+.swift */; };
+		2CA5B434208A24D3008DE954 /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B433208A24D3008DE954 /* Character+.swift */; };
+		2CA5B436208A24F3008DE954 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B435208A24F2008DE954 /* Array+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		2C75E7C32087900600F1EFE2 /* UIApplication+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		2CA5B42F2089DF8A008DE954 /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		2CA5B431208A1F5F008DE954 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		2CA5B433208A24D3008DE954 /* Character+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+.swift"; sourceTree = "<group>"; };
+		2CA5B435208A24F2008DE954 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			children = (
 				2CA5B431208A1F5F008DE954 /* String+.swift */,
 				2CA5B42F2089DF8A008DE954 /* Int+.swift */,
+				2CA5B433208A24D3008DE954 /* Character+.swift */,
+				2CA5B435208A24F2008DE954 /* Array+.swift */,
 			);
 			path = DataTypes;
 			sourceTree = "<group>";
@@ -222,6 +228,8 @@
 				2C75E7C42087900700F1EFE2 /* UIApplication+.swift in Sources */,
 				2CA5B432208A1F5F008DE954 /* String+.swift in Sources */,
 				2CA5B4302089DF8B008DE954 /* Int+.swift in Sources */,
+				2CA5B434208A24D3008DE954 /* Character+.swift in Sources */,
+				2CA5B436208A24F3008DE954 /* Array+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
