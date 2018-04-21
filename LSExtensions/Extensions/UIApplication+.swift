@@ -95,7 +95,7 @@ extension UIApplication{
         Opens Settings App page for this app
          - parameter completion: block to call after opening Settings App has been completed
     */
-    func openSettings(_ completion: ((Bool) -> Swift.Void)? = nil){
+    public func openSettings(_ completion: ((Bool) -> Swift.Void)? = nil){
         let url_settings = URL(string:UIApplicationOpenSettingsURLString);
         UIApplication.shared.open(url_settings!, options: [:], completionHandler: completion)
     }
@@ -168,12 +168,45 @@ extension UIApplication{
     
     /**
         Call to specified phone number
-     - Parameter phone: Phone number to call
+         - parameter phone: Phone number to call
     */
     public func openTel(_ phone : String){
         let Url = URL(string: "tel:\(phone)")!;
         if self.canOpenURL(Url){
             self.open(Url, options: [:], completionHandler: nil);
         }
+    }
+    
+    /**
+         Open Web Browser(Safari) with Google Site to search by given keyboard
+         - parameter keyword: Keyword to search
+    */
+    func searchByGoogle(_ keyword : String){
+        var urlComponents = URLComponents(string: "https://www.google.co.kr/search");
+        urlComponents?.queryItems = [URLQueryItem(name: "q", value: keyword)];
+        UIApplication.shared.open(urlComponents!.url!, options: [:], completionHandler: nil);
+        
+    }
+    
+    /**
+         Open Web Browser(Safari) with Daum Site to search by given keyboard
+         - parameter keyword: Keyword to search
+     */
+    func searchByDaum(_ keyword : String){
+        var urlComponents = URLComponents(string: "http://search.daum.net/search");
+        urlComponents?.queryItems = [URLQueryItem(name: "q", value: keyword)];
+        UIApplication.shared.open(urlComponents!.url!, options: [:], completionHandler: nil);
+        
+    }
+    
+    /**
+         Open Web Browser(Safari) with Naver Site to search by given keyboard
+         - parameter keyword: Keyword to search
+     */
+    func searchByNaver(_ keyword : String){
+        var urlComponents = URLComponents(string: "http://search.naver.com/search.naver");
+        urlComponents?.queryItems = [URLQueryItem(name: "query", value: keyword)];
+        UIApplication.shared.open(urlComponents!.url!, options: [:], completionHandler: nil);
+        
     }
 }
