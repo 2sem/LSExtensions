@@ -92,6 +92,15 @@ extension UIApplication{
     }
     
     /**
+        Opens Settings App page for this app
+         - parameter completion: block to call after opening Settings App has been completed
+    */
+    func openSettings(_ completion: ((Bool) -> Swift.Void)? = nil){
+        let url_settings = URL(string:UIApplicationOpenSettingsURLString);
+        UIApplication.shared.open(url_settings!, options: [:], completionHandler: completion)
+    }
+    
+    /**
         Open Page of specified User on Twitter App
         - parameter id: Twitter Account Name
     */
