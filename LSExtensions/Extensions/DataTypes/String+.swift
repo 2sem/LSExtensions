@@ -196,7 +196,7 @@ extension String {
         let hexStrings = "abcdef0123456789";
         let lower = self.lowercased();
         
-        value = lower.first{ !hexStrings.contains($0) } != nil;
+        value = lower.first{ !hexStrings.contains($0) } == nil;
         
         return value;
     }
@@ -261,7 +261,7 @@ extension String {
             let gValue = CGFloat(Int(gString, radix: 16)!) / 255.0;
             let bValue = CGFloat(Int(bString, radix: 16)!) / 255.0;
             
-            if aString.isHex(){
+            if aString.any && aString.isHex(){
                 alpha = CGFloat(Int(aString, radix: 16)!) / 255.0;
             }
             
