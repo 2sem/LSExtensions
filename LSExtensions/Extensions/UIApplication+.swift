@@ -103,29 +103,39 @@ extension UIApplication{
     /**
         Open Page of specified User on Twitter App
         - parameter id: Twitter Account Name
+        - parameter webOpen: Handler to open url
     */
-    public func openTwitter(_ id : String){
+    public func openTwitter(_ id : String, webOpen: ((URL) -> Void)? = nil){
         var twitterUrl = URL(string: "twitter://user?screen_name=\(id)")!;
         if self.canOpenURL(twitterUrl){
             self.open(twitterUrl, options: [:], completionHandler: nil);
         }else{
             twitterUrl = URL(string: "https://twitter.com/\(id)")!;
-            self.open(twitterUrl, options: [:], completionHandler: nil);
+            if webOpen != nil{
+                webOpen!(twitterUrl);
+            }else{
+                self.open(twitterUrl, options: [:], completionHandler: nil);
+            }
         }
     }
     
     /**
         Open Page of specified User on Facebook App
         - parameter id: FaceBook id converted number by [Find my Facebook ID](www.findmyfbid.com)
+        - parameter webOpen: Handler to open url
     */
-    public func openFacebook(_ id : String){
+    public func openFacebook(_ id : String, webOpen: ((URL) -> Void)? = nil){
         var facebookUrl = URL(string: "fb://profile/\(id)")!;
 
         if self.canOpenURL(facebookUrl){
             self.open(facebookUrl, options: [:], completionHandler: nil);
         }else{
             facebookUrl = URL(string: "https://www.facebook.com/\(id)")!;
-            self.open(facebookUrl, options: [:], completionHandler: nil);
+            if webOpen != nil{
+                webOpen!(facebookUrl);
+            }else{
+                self.open(facebookUrl, options: [:], completionHandler: nil);
+            }
         }
         
         /*FBSDKGraphRequest(graphPath: "\(id)", parameters: ["fields" : "id, name, first_name"]).start { (conn, res, error) in
@@ -179,34 +189,52 @@ extension UIApplication{
     
     /**
          Open Web Browser(Safari) with Google Site to search by given keyboard
-         - parameter keyword: Keyword to search
+        - parameter keyword: Keyword to search
+        - parameter webOpen: Handler to open url
     */
-    func searchByGoogle(_ keyword : String){
+    public func searchByGoogle(_ keyword : String, webOpen: ((URL) -> Void)? = nil){
         var urlComponents = URLComponents(string: "https://www.google.co.kr/search");
         urlComponents?.queryItems = [URLQueryItem(name: "q", value: keyword)];
-        UIApplication.shared.open(urlComponents!.url!, options: [:], completionHandler: nil);
+        let url = urlComponents!.url!;
         
+        if webOpen != nil{
+            webOpen!(url);
+        }else{
+            self.open(url, options: [:], completionHandler: nil);
+        }
     }
     
     /**
          Open Web Browser(Safari) with Daum Site to search by given keyboard
          - parameter keyword: Keyword to search
+        - parameter webOpen: Handler to open url
      */
-    func searchByDaum(_ keyword : String){
+    public func searchByDaum(_ keyword : String, webOpen: ((URL) -> Void)? = nil){
         var urlComponents = URLComponents(string: "http://search.daum.net/search");
         urlComponents?.queryItems = [URLQueryItem(name: "q", value: keyword)];
-        UIApplication.shared.open(urlComponents!.url!, options: [:], completionHandler: nil);
+        let url = urlComponents!.url!;
         
+        if webOpen != nil{
+            webOpen!(url);
+        }else{
+            self.open(url, options: [:], completionHandler: nil);
+        }
     }
     
     /**
          Open Web Browser(Safari) with Naver Site to search by given keyboard
          - parameter keyword: Keyword to search
+        - parameter webOpen: Handler to open url
      */
-    func searchByNaver(_ keyword : String){
+    public func searchByNaver(_ keyword : String, webOpen: ((URL) -> Void)? = nil){
         var urlComponents = URLComponents(string: "http://search.naver.com/search.naver");
         urlComponents?.queryItems = [URLQueryItem(name: "query", value: keyword)];
-        UIApplication.shared.open(urlComponents!.url!, options: [:], completionHandler: nil);
+        let url = urlComponents!.url!;
         
+        if webOpen != nil{
+            webOpen!(url);
+        }else{
+            self.open(url, options: [:], completionHandler: nil);
+        }
     }
 }
