@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C4208D663100B6D2D9 /* UIView+.swift */; };
 		2C75E7B22087892C00F1EFE2 /* LSExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */; };
 		2C75E7B72087892C00F1EFE2 /* LSExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C75E7B62087892C00F1EFE2 /* LSExtensionsTests.swift */; };
 		2C75E7B92087892C00F1EFE2 /* LSExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C12F5C4208D663100B6D2D9 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LSExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSExtensions.h; sourceTree = "<group>"; };
 		2C75E7AC2087892B00F1EFE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE2699C208B343F00DB03E4 /* UIViewController+.swift */,
+				2C12F5C4208D663100B6D2D9 /* UIView+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				2CE2699F208B344600DB03E4 /* NSNotification+.swift in Sources */,
 				2CA5B432208A1F5F008DE954 /* String+.swift in Sources */,
 				2CA5B4302089DF8B008DE954 /* Int+.swift in Sources */,
+				2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */,
 				2CA5B434208A24D3008DE954 /* Character+.swift in Sources */,
 				2CA5B436208A24F3008DE954 /* Array+.swift in Sources */,
 			);
