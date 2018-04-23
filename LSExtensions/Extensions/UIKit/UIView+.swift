@@ -13,7 +13,7 @@ extension UIView{
     /**
         Get UIViewController contains this UIView
      */
-    var viewController : UIViewController?{
+    public var viewController : UIViewController?{
         get{
             var value : UIViewController?;
             

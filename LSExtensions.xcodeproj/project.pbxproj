@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C4208D663100B6D2D9 /* UIView+.swift */; };
+		2C12F5C7208D66D600B6D2D9 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */; };
+		2C12F5CA208D67D800B6D2D9 /* DispatchQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */; };
+		2C12F5CC208D6B6200B6D2D9 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5CB208D6B6200B6D2D9 /* Data+.swift */; };
 		2C75E7B22087892C00F1EFE2 /* LSExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */; };
 		2C75E7B72087892C00F1EFE2 /* LSExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C75E7B62087892C00F1EFE2 /* LSExtensionsTests.swift */; };
 		2C75E7B92087892C00F1EFE2 /* LSExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		2C12F5C4208D663100B6D2D9 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
+		2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+.swift"; sourceTree = "<group>"; };
+		2C12F5CB208D6B6200B6D2D9 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LSExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSExtensions.h; sourceTree = "<group>"; };
 		2C75E7AC2087892B00F1EFE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C12F5C8208D673400B6D2D9 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
 		2C19CD8220898A58003E456F /* DataTypes */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +90,7 @@
 				2CA5B42F2089DF8A008DE954 /* Int+.swift */,
 				2CA5B433208A24D3008DE954 /* Character+.swift */,
 				2CA5B435208A24F2008DE954 /* Array+.swift */,
+				2C12F5CB208D6B6200B6D2D9 /* Data+.swift */,
 			);
 			path = DataTypes;
 			sourceTree = "<group>";
@@ -121,6 +136,7 @@
 		2C75E7C220878FCF00F1EFE2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2C12F5C8208D673400B6D2D9 /* Thread */,
 				2CE26995208AE7CB00DB03E4 /* UIKit */,
 				2CA5B437208A2D84008DE954 /* Device */,
 				2C19CD8220898A58003E456F /* DataTypes */,
@@ -143,6 +159,7 @@
 			children = (
 				2CE2699C208B343F00DB03E4 /* UIViewController+.swift */,
 				2C12F5C4208D663100B6D2D9 /* UIView+.swift */,
+				2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -258,10 +275,13 @@
 				2CE2699D208B343F00DB03E4 /* UIViewController+.swift in Sources */,
 				2C75E7C42087900700F1EFE2 /* UIApplication+.swift in Sources */,
 				2CE26997208B279200DB03E4 /* Locale+.swift in Sources */,
+				2C12F5CC208D6B6200B6D2D9 /* Data+.swift in Sources */,
 				2CE2699F208B344600DB03E4 /* NSNotification+.swift in Sources */,
 				2CA5B432208A1F5F008DE954 /* String+.swift in Sources */,
+				2C12F5CA208D67D800B6D2D9 /* DispatchQueue+.swift in Sources */,
 				2CA5B4302089DF8B008DE954 /* Int+.swift in Sources */,
 				2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */,
+				2C12F5C7208D66D600B6D2D9 /* UIScrollView+.swift in Sources */,
 				2CA5B434208A24D3008DE954 /* Character+.swift in Sources */,
 				2CA5B436208A24F3008DE954 /* Array+.swift in Sources */,
 			);
