@@ -56,6 +56,28 @@ extension Int{
         }
         self = value + 1;
     }
+    
+    /**
+        Converts this to Distance String and returns it
+         - parameter maximumFractions: Fraction Digit Count
+         - returns: this to Distance String converted from this
+    */
+    public func stringForDistance(_ maximumFractions: Int = 2) -> String{
+        var value = "";
+        
+        if self < 1000{
+            value = "\(self) m";
+        }else{
+            let numberFormat = NumberFormatter()
+            numberFormat.numberStyle = NumberFormatter.Style.decimal;
+            numberFormat.maximumFractionDigits = maximumFractions;
+            
+            let km = Double(self) / 1000.0;
+            value = "\(numberFormat.string(from: NSNumber(value: km)) ?? "") km";
+        }
+        
+        return value;
+    }
 }
 
 extension Int32{

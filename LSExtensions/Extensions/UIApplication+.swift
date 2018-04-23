@@ -237,4 +237,22 @@ extension UIApplication{
             self.open(url, options: [:], completionHandler: nil);
         }
     }
+    
+    /**
+        Show Network Indicator asynchronously
+    */
+    public static func onNetworking(){
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true;
+        }
+    }
+    
+    /**
+         Hide Network Indicator asynchronously
+     */
+    public static func offNetworking(){
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false;
+        }
+    }
 }
