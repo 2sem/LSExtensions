@@ -17,13 +17,13 @@ extension UITextField{
         }
         
         set(value){
-            guard value != nil else{
+            guard let color = value else{
                 self.placeholder = self.attributedPlaceholder?.string;
                 return;
             }
             
             let text = self.placeholder ?? self.attributedPlaceholder?.string;
-            let attbText = NSAttributedString(string: text ?? "", attributes: [NSAttributedStringKey.foregroundColor : value]);
+            let attbText = NSAttributedString(string: text ?? "", attributes: [NSAttributedStringKey.foregroundColor : color]);
             self.attributedPlaceholder = attbText;
         }
     }

@@ -10,7 +10,7 @@ import UIKit
 import Contacts
 
 extension CNContact {
-    var fullName : String?{
+    public var fullName : String?{
         get{
             return CNContactFormatter.string(from: self, style: .fullName);
         }
