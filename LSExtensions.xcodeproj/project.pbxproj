@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1216E7208F333200B51D91 /* CNContact+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1216E6208F333200B51D91 /* CNContact+.swift */; };
 		2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C4208D663100B6D2D9 /* UIView+.swift */; };
 		2C12F5C7208D66D600B6D2D9 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */; };
 		2C12F5CA208D67D800B6D2D9 /* DispatchQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */; };
@@ -15,6 +16,7 @@
 		2C75E7B72087892C00F1EFE2 /* LSExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C75E7B62087892C00F1EFE2 /* LSExtensionsTests.swift */; };
 		2C75E7B92087892C00F1EFE2 /* LSExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C75E7C42087900700F1EFE2 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C75E7C32087900600F1EFE2 /* UIApplication+.swift */; };
+		2C7751A2208E25C0009B786D /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7751A1208E25C0009B786D /* UITextField+.swift */; };
 		2CA5B4302089DF8B008DE954 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B42F2089DF8A008DE954 /* Int+.swift */; };
 		2CA5B432208A1F5F008DE954 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B431208A1F5F008DE954 /* String+.swift */; };
 		2CA5B434208A24D3008DE954 /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B433208A24D3008DE954 /* Character+.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C1216E6208F333200B51D91 /* CNContact+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNContact+.swift"; sourceTree = "<group>"; };
 		2C12F5C4208D663100B6D2D9 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+.swift"; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		2C75E7B62087892C00F1EFE2 /* LSExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSExtensionsTests.swift; sourceTree = "<group>"; };
 		2C75E7B82087892C00F1EFE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C75E7C32087900600F1EFE2 /* UIApplication+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		2C7751A1208E25C0009B786D /* UITextField+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		2CA5B42F2089DF8A008DE954 /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		2CA5B431208A1F5F008DE954 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2CA5B433208A24D3008DE954 /* Character+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+.swift"; sourceTree = "<group>"; };
@@ -75,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1216E5208F332800B51D91 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				2C1216E6208F333200B51D91 /* CNContact+.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		2C12F5C8208D673400B6D2D9 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +148,7 @@
 		2C75E7C220878FCF00F1EFE2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2C1216E5208F332800B51D91 /* Contacts */,
 				2C12F5C8208D673400B6D2D9 /* Thread */,
 				2CE26995208AE7CB00DB03E4 /* UIKit */,
 				2CA5B437208A2D84008DE954 /* Device */,
@@ -160,6 +173,7 @@
 				2CE2699C208B343F00DB03E4 /* UIViewController+.swift */,
 				2C12F5C4208D663100B6D2D9 /* UIView+.swift */,
 				2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */,
+				2C7751A1208E25C0009B786D /* UITextField+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -273,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE2699D208B343F00DB03E4 /* UIViewController+.swift in Sources */,
+				2C7751A2208E25C0009B786D /* UITextField+.swift in Sources */,
 				2C75E7C42087900700F1EFE2 /* UIApplication+.swift in Sources */,
 				2CE26997208B279200DB03E4 /* Locale+.swift in Sources */,
 				2C12F5CC208D6B6200B6D2D9 /* Data+.swift in Sources */,
+				2C1216E7208F333200B51D91 /* CNContact+.swift in Sources */,
 				2CE2699F208B344600DB03E4 /* NSNotification+.swift in Sources */,
 				2CA5B432208A1F5F008DE954 /* String+.swift in Sources */,
 				2C12F5CA208D67D800B6D2D9 /* DispatchQueue+.swift in Sources */,

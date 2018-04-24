@@ -65,7 +65,7 @@ extension UIApplication{
     /**
         Url for Itunes Link for this App
      */
-    var urlForItunes : URL{
+    public var urlForItunes : URL{
         get{
             return URL(string :"https://itunes.apple.com/kr/app/myapp/id\(self.appId)?l=ko&mt=8")!;
         }
