@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C105907209098800064E933 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C105906209098800064E933 /* UIImage+.swift */; };
+		2C10590B2090A2CC0064E933 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10590A2090A2CC0064E933 /* Notification+.swift */; };
 		2C1216E7208F333200B51D91 /* CNContact+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1216E6208F333200B51D91 /* CNContact+.swift */; };
 		2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C4208D663100B6D2D9 /* UIView+.swift */; };
 		2C12F5C7208D66D600B6D2D9 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C105906209098800064E933 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		2C10590A2090A2CC0064E933 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		2C1216E6208F333200B51D91 /* CNContact+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNContact+.swift"; sourceTree = "<group>"; };
 		2C12F5C4208D663100B6D2D9 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 		2C19CD8220898A58003E456F /* DataTypes */ = {
 			isa = PBXGroup;
 			children = (
+				2C105906209098800064E933 /* UIImage+.swift */,
 				2CA5B431208A1F5F008DE954 /* String+.swift */,
 				2CA5B42F2089DF8A008DE954 /* Int+.swift */,
 				2CA5B433208A24D3008DE954 /* Character+.swift */,
@@ -163,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE2699E208B344600DB03E4 /* NSNotification+.swift */,
+				2C10590A2090A2CC0064E933 /* Notification+.swift */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C10590B2090A2CC0064E933 /* Notification+.swift in Sources */,
 				2CE2699D208B343F00DB03E4 /* UIViewController+.swift in Sources */,
 				2C7751A2208E25C0009B786D /* UITextField+.swift in Sources */,
 				2C75E7C42087900700F1EFE2 /* UIApplication+.swift in Sources */,
@@ -298,6 +305,7 @@
 				2CA5B4302089DF8B008DE954 /* Int+.swift in Sources */,
 				2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */,
 				2C12F5C7208D66D600B6D2D9 /* UIScrollView+.swift in Sources */,
+				2C105907209098800064E933 /* UIImage+.swift in Sources */,
 				2CA5B434208A24D3008DE954 /* Character+.swift in Sources */,
 				2CA5B436208A24F3008DE954 /* Array+.swift in Sources */,
 			);
