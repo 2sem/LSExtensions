@@ -375,6 +375,13 @@ extension String {
     public func multiply(_ count : Int) -> String{
         return String.init(repeating: self, count: count);
     }
+    
+    /**
+        Url to search by Naver with this string
+     */
+    public var naverUrlForSearch : URL{
+        return URL(string: "http://search.naver.com/search.naver?ie=utf8&query=\(self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")")!;
+    }
 }
 
 enum StringExtensionError : Error{

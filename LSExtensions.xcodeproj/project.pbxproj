@@ -14,6 +14,7 @@
 		2C12F5C7208D66D600B6D2D9 /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */; };
 		2C12F5CA208D67D800B6D2D9 /* DispatchQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */; };
 		2C12F5CC208D6B6200B6D2D9 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5CB208D6B6200B6D2D9 /* Data+.swift */; };
+		2C2042122093497000132E57 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2042112093497000132E57 /* UIWindow+.swift */; };
 		2C75E7B22087892C00F1EFE2 /* LSExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */; };
 		2C75E7B72087892C00F1EFE2 /* LSExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C75E7B62087892C00F1EFE2 /* LSExtensionsTests.swift */; };
 		2C75E7B92087892C00F1EFE2 /* LSExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,6 +47,7 @@
 		2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+.swift"; sourceTree = "<group>"; };
 		2C12F5CB208D6B6200B6D2D9 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
+		2C2042112093497000132E57 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LSExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSExtensions.h; sourceTree = "<group>"; };
 		2C75E7AC2087892B00F1EFE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				2C12F5C4208D663100B6D2D9 /* UIView+.swift */,
 				2C12F5C6208D66D500B6D2D9 /* UIScrollView+.swift */,
 				2C7751A1208E25C0009B786D /* UITextField+.swift */,
+				2C2042112093497000132E57 /* UIWindow+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				2CA5B4302089DF8B008DE954 /* Int+.swift in Sources */,
 				2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */,
 				2C12F5C7208D66D600B6D2D9 /* UIScrollView+.swift in Sources */,
+				2C2042122093497000132E57 /* UIWindow+.swift in Sources */,
 				2C105907209098800064E933 /* UIImage+.swift in Sources */,
 				2CA5B434208A24D3008DE954 /* Character+.swift in Sources */,
 				2CA5B436208A24F3008DE954 /* Array+.swift in Sources */,
