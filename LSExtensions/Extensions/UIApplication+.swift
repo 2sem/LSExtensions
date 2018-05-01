@@ -63,6 +63,15 @@ extension UIApplication{
     }
     
     /**
+     Is kind of Current Device iPad?
+     */
+    public var isIPad : Bool{
+        get{
+            return UIDevice().userInterfaceIdiom == .pad;
+        }
+    }
+    
+    /**
         Url for Itunes Link for this App
      */
     public var urlForItunes : URL{

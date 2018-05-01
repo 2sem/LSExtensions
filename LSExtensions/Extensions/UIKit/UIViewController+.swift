@@ -323,9 +323,10 @@ extension UIViewController {
      - parameter applicationActivities: app filter to shared
      - parameter completion: block to be called when presenting share activity has been completed
     */
-    public func share(_ activityItems: [Any], applicationActivities: [UIActivity]? = nil, completion: (() -> Void)? = nil){
+    public func share(_ activityItems: [Any], applicationActivities: [UIActivity]? = nil, excludedActivities: [UIActivityType] = [], completion: (() -> Void)? = nil){
         let controller = UIActivityViewController.init(activityItems: activityItems, applicationActivities: applicationActivities);
         controller.popoverPresentationController?.sourceView = self.view;
+        controller.excludedActivityTypes = excludedActivities;
         //        controller.excludedActivityTypes = [.mail, .message, .postToFacebook, .postToTwitter];
         self.present(controller, animated: true, completion: completion);
     }
