@@ -11,6 +11,26 @@ import UIKit
 
 extension UIView{
     /**
+        Capture screenshot of this view with given scale
+     - parameter scale: scale for screenshot
+    */
+    public func renderImage(_ scale : CGFloat = 1.0) -> UIImage?{
+        var value : UIImage?;
+        
+        autoreleasepool { () -> () in
+            UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 2.0);
+            
+            self.drawHierarchy(in: self.bounds, afterScreenUpdates: true);
+            
+            value = UIGraphicsGetImageFromCurrentImageContext();
+            
+            UIGraphicsEndImageContext();
+        }
+        
+        return value;
+    }
+    
+    /**
      Remove all sub views from this
      */
     public func clearSubViews(){
