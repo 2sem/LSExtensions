@@ -368,6 +368,32 @@ extension String {
     }
     
     /**
+        Returns Range searched for given tag from this String
+         - parameter tag: tag string to search range with
+         - returns: Range searched for given tag from this String
+    */
+    public func range(byTag tag: String) -> Range<String.Index>?{
+        var value : Range<String.Index>?;
+        
+        guard let rangeBegin = self.range(of: "<\(tag)>"),
+            let rangeEnd = self.range(of: "</\(tag)>", options: .backwards) else{
+                return value;
+        }
+        value = (rangeBegin.lowerBound ..< rangeEnd.upperBound);
+        
+        return value;
+    }
+    
+    /**
+     Returns string wrapped by given tag from this String
+     - parameter tag: tag to wrap this
+     - returns: String wrapped by given tag from this String
+     */
+    public func wrap(byTag tag: String) -> String{
+        return "<\(tag)>\(self)</\(tag)>";
+    }
+    
+    /**
         Returns new string generated this repeated given number of times.
          - parameter count: Repeating count
          - returns: New string generated this repeated given number of times.
