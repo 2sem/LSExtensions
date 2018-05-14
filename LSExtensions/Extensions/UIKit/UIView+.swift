@@ -249,4 +249,21 @@ extension UIView{
         let radian = angle / 180.0 * CGFloat(Double.pi);
         self.transform = self.transform.rotated(by: radian);
     }
+    
+    /**
+        Get current first responder from this view
+    */
+    public var currentFirstResponder : UIView? {
+        if self.isFirstResponder {
+            return self
+        }
+        
+        for view in self.subviews {
+            if let responder = view.currentFirstResponder {
+                return responder
+            }
+        }
+        
+        return nil
+    }
 }

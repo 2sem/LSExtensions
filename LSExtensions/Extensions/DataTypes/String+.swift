@@ -408,6 +408,18 @@ extension String {
     public var naverUrlForSearch : URL{
         return URL(string: "http://search.naver.com/search.naver?ie=utf8&query=\(self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")")!;
     }
+    
+    /**
+        Integer converted from this by removing comma
+    */
+    public var intByComma : Int{
+        /*var formatter = NumberFormatter();
+         formatter.numberStyle = .decimal;
+         //formatter.decimalSeparator = ",";
+         */
+        //return formatter.number(from: self)?.intValue ?? 0;
+        return Int(self.replacingOccurrences(of: ",", with: "")) ?? 0;
+    }
 }
 
 enum StringExtensionError : Error{
