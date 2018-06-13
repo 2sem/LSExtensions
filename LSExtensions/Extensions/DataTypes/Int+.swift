@@ -83,7 +83,7 @@ extension Int{
         String from this by formatted with comma
     */
     public var stringByComma : String{
-        var formatter = NumberFormatter();
+        let formatter = NumberFormatter();
         formatter.numberStyle = NumberFormatter.Style.decimal;
         
         return formatter.string(from: NSNumber(value: self)) ?? "";
@@ -129,12 +129,6 @@ extension Int{
     */
     public static func limit(_ value : Int, max: Int) -> Int{
         return value < max ? value : max;
-        var value = value;
-        if value > max{
-            value = max;
-        }
-        
-        return value;
     }
 }
 
