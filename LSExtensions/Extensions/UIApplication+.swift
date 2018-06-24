@@ -81,10 +81,21 @@ extension UIApplication{
     }
     
     /**
+        os compatible for function to open url
+    */
+    private func openCompatible(_ url: URL, options: [String : Any] = [:], completionHandler completion: ((Bool) -> Swift.Void)? = nil){
+        if #available(iOS 10.0, *) {
+            self.open(url, options: options, completionHandler: completion)
+        } else {
+            self.openURL(url);
+        }
+    }
+    
+    /**
         Open AppStore for this App
     */
     public func openItunes(){
-        self.open(self.urlForItunes, options: [:], completionHandler: nil) ;
+        self.openCompatible(self.urlForItunes, options: [:], completionHandler: nil) ;
     }
     
     /**
@@ -97,7 +108,7 @@ extension UIApplication{
         let appId = appId.isEmpty ? self.appId : appId;
         let rateUrl = URL(string: "https://itunes.apple.com/app/myapp/id\(appId)?mt=8&action=write-review");
     
-        self.open(rateUrl!, options: [:], completionHandler: completion);
+        self.openCompatible(rateUrl!, options: [:], completionHandler: completion);
     }
     
     /**
@@ -106,7 +117,7 @@ extension UIApplication{
     */
     public func openSettings(_ completion: ((Bool) -> Swift.Void)? = nil){
         let url_settings = URL(string:UIApplicationOpenSettingsURLString);
-        UIApplication.shared.open(url_settings!, options: [:], completionHandler: completion)
+        self.openCompatible(url_settings!, options: [:], completionHandler: completion)
     }
     
     /**
@@ -117,13 +128,13 @@ extension UIApplication{
     public func openTwitter(_ id : String, webOpen: ((URL) -> Void)? = nil){
         var twitterUrl = URL(string: "twitter://user?screen_name=\(id)")!;
         if self.canOpenURL(twitterUrl){
-            self.open(twitterUrl, options: [:], completionHandler: nil);
+            self.openCompatible(twitterUrl, options: [:], completionHandler: nil);
         }else{
             twitterUrl = URL(string: "https://twitter.com/\(id)")!;
             if webOpen != nil{
                 webOpen!(twitterUrl);
             }else{
-                self.open(twitterUrl, options: [:], completionHandler: nil);
+                self.openCompatible(twitterUrl, options: [:], completionHandler: nil);
             }
         }
     }
@@ -137,13 +148,13 @@ extension UIApplication{
         var facebookUrl = URL(string: "fb://profile/\(id)")!;
 
         if self.canOpenURL(facebookUrl){
-            self.open(facebookUrl, options: [:], completionHandler: nil);
+            self.openCompatible(facebookUrl, options: [:], completionHandler: nil);
         }else{
             facebookUrl = URL(string: "https://www.facebook.com/\(id)")!;
             if webOpen != nil{
                 webOpen!(facebookUrl);
             }else{
-                self.open(facebookUrl, options: [:], completionHandler: nil);
+                self.openCompatible(facebookUrl, options: [:], completionHandler: nil);
             }
         }
         
@@ -159,7 +170,7 @@ extension UIApplication{
     public func openWeb(_ urlString : String){
         let Url = URL(string: urlString)!;
         if self.canOpenURL(Url){
-            self.open(Url, options: [:], completionHandler: nil);
+            self.openCompatible(Url, options: [:], completionHandler: nil);
         }
     }
     
@@ -170,7 +181,7 @@ extension UIApplication{
     public func openEmail(_ email : String){
         let Url = URL(string: "mailto:\(email)")!;
         if self.canOpenURL(Url){
-            self.open(Url, options: [:], completionHandler: nil);
+            self.openCompatible(Url, options: [:], completionHandler: nil);
         }
     }
     
@@ -181,7 +192,7 @@ extension UIApplication{
     public func openSms(_ sms : String){
         let Url = URL(string: "sms:\(sms)")!;
         if self.canOpenURL(Url){
-            self.open(Url, options: [:], completionHandler: nil);
+            self.openCompatible(Url, options: [:], completionHandler: nil);
         }
     }
     
@@ -192,7 +203,7 @@ extension UIApplication{
     public func openTel(_ phone : String){
         let Url = URL(string: "tel:\(phone)")!;
         if self.canOpenURL(Url){
-            self.open(Url, options: [:], completionHandler: nil);
+            self.openCompatible(Url, options: [:], completionHandler: nil);
         }
     }
     
@@ -209,7 +220,7 @@ extension UIApplication{
         if webOpen != nil{
             webOpen!(url);
         }else{
-            self.open(url, options: [:], completionHandler: nil);
+            self.openCompatible(url, options: [:], completionHandler: nil);
         }
     }
     
@@ -226,7 +237,7 @@ extension UIApplication{
         if webOpen != nil{
             webOpen!(url);
         }else{
-            self.open(url, options: [:], completionHandler: nil);
+            self.openCompatible(url, options: [:], completionHandler: nil);
         }
     }
     
@@ -243,7 +254,7 @@ extension UIApplication{
         if webOpen != nil{
             webOpen!(url);
         }else{
-            self.open(url, options: [:], completionHandler: nil);
+            self.openCompatible(url, options: [:], completionHandler: nil);
         }
     }
     

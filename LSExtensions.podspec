@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
   #
   s.name         = "LSExtensions"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.swift_version = "4.1"
   s.summary      = "Collection of Usable Extension."
 
@@ -71,7 +71,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   #s.ios.deployment_target = "10.0"
