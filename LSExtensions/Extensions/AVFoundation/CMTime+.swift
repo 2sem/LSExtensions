@@ -66,11 +66,11 @@ extension CMTime {
     /**
         Seconds converted from this time
     */
-    public var seconds : Double{
+    /*public var seconds : Double{
         get{
             return CMTimeGetSeconds(self);
         }
-    }
+    }*/
     
     /**
         Checks if this time is valid
