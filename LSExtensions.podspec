@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
   #
   s.name         = "LSExtensions"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.swift_version = "4.1"
   s.summary      = "Collection of Usable Extension."
 
@@ -97,7 +97,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "*/Extensions/*.swift", "*/Extensions/*/*.swift", "**/*.{h,m}"
+  s.source_files  = "*/Extensions/*.swift", "*/Extensions/*/*.swift", "*/Extensions/*/*/*.swift", "**/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"

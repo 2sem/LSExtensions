@@ -275,4 +275,11 @@ extension UIApplication{
             UIApplication.shared.isNetworkActivityIndicatorVisible = false;
         }
     }
+    
+    /**
+         Most Top View Controller of first window of this application
+     */
+    public var mostTopViewController : UIViewController?{
+        return self.windows.first?.rootViewController?.mostTopViewController;
+    }
 }

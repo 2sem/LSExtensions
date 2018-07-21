@@ -243,10 +243,14 @@ extension UIView{
     }
     
     /**
-        Rotates this by given angle
+         Rotates this by given angle and given anchor
+         - parameter angle: Degree to rotate this view
+         - parameter anchor: The anchor for rotation
      */
-    public func rotate(_ angle: CGFloat){
+    public func rotate(_ angle: CGFloat, anchor: CGPoint = CGPoint.init(x: 0.5, y: 0.5)){
         let radian = angle / 180.0 * CGFloat(Double.pi);
+        self.layer.anchorPoint = CGPoint(x: anchor.x / self.frame.width, y: anchor.y / self.frame.height);
+        self.transform = self.transform.translatedBy(x: -anchor.x, y: 0);
         self.transform = self.transform.rotated(by: radian);
     }
     
@@ -265,5 +269,45 @@ extension UIView{
         }
         
         return nil
+    }
+    
+    /**
+     Wrapper of layer.borderColor for inspector in storyboard or xib
+     */
+    @IBInspectable
+    public var borderUIColor : UIColor?{
+        get{
+            return UIColor.init(cgColor: self.layer.borderColor ?? UIColor.clear.cgColor);
+        }
+        
+        set(value){
+            self.layer.borderColor = value?.cgColor;
+        }
+    }
+    
+    /**
+     Wrapper of layer.borderWidth for inspector in storyboard or xib
+     */
+    @IBInspectable
+    public var borderWidth : CGFloat{
+        get{
+            return self.layer.borderWidth;
+        }
+        set(value){
+            self.layer.borderWidth = value;
+        }
+    }
+    
+    /**
+     Wrapper of layer.cornerRadius for inspector in storyboard or xib
+     */
+    @IBInspectable
+    public var cornerRadius : CGFloat{
+        get{
+            return self.layer.cornerRadius
+        }
+        set(value){
+            self.layer.cornerRadius = value;
+        }
     }
 }

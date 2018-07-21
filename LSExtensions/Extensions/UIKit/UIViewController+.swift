@@ -155,13 +155,13 @@ extension UIViewController {
     }
     
     /**
-     Presents given UIViewController as Popover on this
-     - parameter inView: UIViewController to present as Popover
-     - parameter buttonToShow: UIBarButtonItem which is the begin of arrow for Popover
-     - parameter permittedArrowDirections: Direction of Arrow for Popover
-     - parameter animated: Indication whether present popover with the animation
-     - parameter color: Background Color of Popover
-     - returns: UIPopoverPresentationController for new Popover on this
+         Presents given UIViewController as Popover on this
+         - parameter inView: UIViewController to present as Popover
+         - parameter buttonToShow: UIBarButtonItem which is the begin of arrow for Popover
+         - parameter permittedArrowDirections: Direction of Arrow for Popover
+         - parameter animated: Indication whether present popover with the animation
+         - parameter color: Background Color of Popover
+         - returns: UIPopoverPresentationController for new Popover on this
     */
     public func popOverFromButton(inView: UIViewController, buttonToShow: UIBarButtonItem, permittedArrowDirections : UIPopoverArrowDirection, animated : Bool=true, color: UIColor? = nil) -> UIPopoverPresentationController?{
         self.modalPresentationStyle = .popover;
@@ -188,16 +188,16 @@ extension UIViewController {
     }
     
     /**
-     Presents given UIViewController as Popover on this
-     - parameter inView: UIViewController to present as Popover
-     - parameter popOverDelegate: delegate for Popover
-     - parameter viewToShow: UIView to use as the begin of arrow instead UIBarButtonItem
-     - parameter rectToShow: Area to use as the begin of arrow instead UIBarButtonItem
-     - parameter permittedArrowDirections: Direction of Arrow for Popover
-     - parameter animated: Indication whether present popover with the animation
-     - parameter color: Background Color of Popover
-     - parameter completion: block to be called when presenting this has been completed
-     - returns: UIPopoverPresentationController for new Popover on this
+         Presents given UIViewController as Popover on this
+         - parameter inView: UIViewController to present as Popover
+         - parameter popOverDelegate: delegate for Popover
+         - parameter viewToShow: UIView to use as the begin of arrow instead UIBarButtonItem
+         - parameter rectToShow: Area to use as the begin of arrow instead UIBarButtonItem
+         - parameter permittedArrowDirections: Direction of Arrow for Popover
+         - parameter animated: Indication whether present popover with the animation
+         - parameter color: Background Color of Popover
+         - parameter completion: block to be called when presenting this has been completed
+         - returns: UIPopoverPresentationController for new Popover on this
      */
     public func popOver(inView: UIViewController, popOverDelegate delegate: UIPopoverPresentationControllerDelegate? = nil, viewToShow view: UIView, rectToShow rect: CGRect, permittedArrowDirections : UIPopoverArrowDirection, animated : Bool, color: UIColor? = nil, completion: (() -> Void)? = nil) -> UIPopoverPresentationController?{
         var pop = self.popoverPresentationController;
@@ -232,7 +232,7 @@ extension UIViewController {
     }
     
     /**
-     Indication whether this is presented as Popover
+         Indication whether this is presented as Popover
     */
     public var isPopover : Bool{
         get{
@@ -250,9 +250,9 @@ extension UIViewController {
     }
     
     /**
-     Returns child UIViewController is given Type
-     - parameter type: UIViewController's type to get
-     - returns: child UIViewController found out in this by given Type
+         Returns child UIViewController is given Type
+         - parameter type: UIViewController's type to get
+         - returns: child UIViewController found out in this by given Type
     */
     public func childViewController<T : UIViewController>(type: T.Type) -> T?{
         return self.childViewControllers.filter({ (view) -> Bool in
@@ -293,12 +293,12 @@ extension UIViewController {
     }
     
     /**
-     Presents UIAlertController to notify you need to change the setting for this app to do something and provide button to open Settings App.
-     - parameter title: title of UIAlertController to present
-     - parameter msg: message of UIAlertController to present
-     - parameter style: style of UIAlertController to present
-     - parameter titleForOK: title of "OK" button
-     - parameter titleForSettings: title of "Settings" button
+         Presents UIAlertController to notify you need to change the setting for this app to do something and provide button to open Settings App.
+         - parameter title: title of UIAlertController to present
+         - parameter msg: message of UIAlertController to present
+         - parameter style: style of UIAlertController to present
+         - parameter titleForOK: title of "OK" button
+         - parameter titleForSettings: title of "Settings" button
     */
     public func openSettingsOrCancel(title: String = "Something is disabled", msg: String = "Please enable to do something", style: UIAlertControllerStyle = .alert, titleForOK: String = "OK", titleForSettings: String = "Settings"){
         let acts = [UIAlertAction(title: titleForSettings, style: .default, handler: { (act) in
@@ -308,20 +308,20 @@ extension UIViewController {
     }
     
     /**
-     Presents UIAlertController to notify you need to cellular data or Wi-Fi to do something.
-     - parameter title: title of UIViewController
-     - parameter okHandler: Handler for OK Button
-     - parameter cancelHandler: Handler for Cancel Button
+         Presents UIAlertController to notify you need to cellular data or Wi-Fi to do something.
+         - parameter title: title of UIViewController
+         - parameter okHandler: Handler for OK Button
+         - parameter cancelHandler: Handler for Cancel Button
     */
     public func showCellularAlert(title: String, okHandler : ((UIAlertAction) -> Void)? = nil, cancelHandler : ((UIAlertAction) -> Void)? = nil){
         self.showAlert(title: title, msg: "Turn on cellular data or use Wi-Fi to access data".localized(), actions: [UIAlertAction(title: "Cancel".localized(), style: .default, handler: cancelHandler), UIAlertAction(title: "OK".localized(), style: .default, handler: okHandler)], style: .alert);
     }
     
     /**
-     Presents UIActivityViewController to share given item to another app
-     - parameter activityItems: items to share to another app
-     - parameter applicationActivities: app filter to shared
-     - parameter completion: block to be called when presenting share activity has been completed
+         Presents UIActivityViewController to share given item to another app
+         - parameter activityItems: items to share to another app
+         - parameter applicationActivities: app filter to shared
+         - parameter completion: block to be called when presenting share activity has been completed
     */
     public func share(_ activityItems: [Any], applicationActivities: [UIActivity]? = nil, excludedActivities: [UIActivityType] = [], completion: (() -> Void)? = nil){
         let controller = UIActivityViewController.init(activityItems: activityItems, applicationActivities: applicationActivities);
@@ -329,6 +329,72 @@ extension UIViewController {
         controller.excludedActivityTypes = excludedActivities;
         //        controller.excludedActivityTypes = [.mail, .message, .postToFacebook, .postToTwitter];
         self.present(controller, animated: true, completion: completion);
+    }
+    
+    /**
+         Presents the simple alert with only a confirm button
+         - parameter title: The title of the alert
+         - parameter msg: The message of the alert
+         - parameter buttonTitle: The title of the confirm button
+         - parameter style: The style of the alert
+         - parameter handle: Handler for completion of presenting the alert
+     */
+    @discardableResult
+    public func showConfirm(title: String, msg: String, buttonTitle: String, style: UIAlertControllerStyle, handle: (() -> Void)? = nil) -> UIAlertController {
+        return self.showAlert(title: title, msg: msg, actions: [UIAlertAction.init(title: buttonTitle, style: .default, handler: { (act) in
+            handle?();
+        })], style: style);
+    }
+    
+    /**
+         short cut for synchronous dismissing in DispatchQueue.main
+     */
+    public func dismissSync(animated flag: Bool, completion: (() -> Swift.Void)? = nil){
+        DispatchQueue.main.syncInMain { [weak self] in
+            self?.dismiss(animated: flag, completion: completion);
+        }
+    }
+    
+    /**
+         short cut for asynchronous dismissing in DispatchQueue.main
+     */
+    public func dismissAsync(animated flag: Bool, completion: (() -> Swift.Void)? = nil){
+        DispatchQueue.main.async { [weak self] in
+            self?.dismiss(animated: flag, completion: completion);
+        }
+    }
+    
+    /**
+         Binds popover delegate and anchor
+     */
+    public func bindPopover(_ delegate : UIPopoverPresentationControllerDelegate? = nil, anchorView view: UIView?){
+        let delegate = delegate ?? _UIPopoverPresentationControllerDefaultDelegate.default;
+        guard let popover = self.popoverPresentationController else{
+            return;
+        }
+        
+        popover.delegate = delegate;
+        if let popoverSource = view{
+            popover.sourceRect = popoverSource.bounds;
+        }
+    }
+    
+    /**
+         Add the view of given view controller into container view
+         - parameter containerView: The container view to embed the view controller
+         - parameter viewController: The view controller to be embeded into the container view
+     */
+    @discardableResult
+    public func addEmbedView<T>(_ containerView : UIView, embedViewController viewController : T) -> T where T : UIViewController {
+        viewController.willMove(toParentViewController: self);
+        self.addChildViewController(viewController);
+        containerView.addSubview(viewController.view);
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight];
+        viewController.view.bounds = view.bounds;
+        viewController.view.frame.origin = CGPoint.zero;
+        viewController.didMove(toParentViewController: self);
+        
+        return viewController;
     }
 }
 
