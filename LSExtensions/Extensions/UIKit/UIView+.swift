@@ -310,4 +310,15 @@ extension UIView{
             self.layer.cornerRadius = value;
         }
     }
+    
+    /**
+        Find and returns parent view which type is same as given type
+        - parameter type : parent view type to find
+        - returns : parent view found by given type
+    */
+    public func parent<T : UIView>(type: T.Type) -> T?{
+        var parent = self.superview;
+        
+        return parent is T ? parent as? T : parent?.parent(type: T.self);
+    }
 }
