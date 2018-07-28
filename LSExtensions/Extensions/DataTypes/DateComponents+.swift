@@ -25,10 +25,10 @@ extension DateComponents{
         Convenient Enum for weekday
         weekday is Int, so developer couldn't set it easily
     */
-    struct DateWeekDay : OptionSet{
-        var rawValue : Int;
+    public struct DateWeekDay : OptionSet{
+        public var rawValue : Int;
         
-        init(rawValue: Int) {
+        public init(rawValue: Int) {
             self.rawValue = rawValue;
         }
         
@@ -39,15 +39,15 @@ extension DateComponents{
         static let Thursday = DateWeekDay.init(rawValue: 1 << 4);
         static let Friday = DateWeekDay.init(rawValue: 1 << 5);
         static let Saturday = DateWeekDay.init(rawValue: 1 << 6);
-        static let All : DateWeekDay = [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday];
-        static let allWeekDays : [DateWeekDay] = [DateWeekDay.Sunday, DateWeekDay.Monday, DateWeekDay.Tuesday, DateWeekDay.Wednesday, DateWeekDay.Thursday, DateWeekDay.Friday, DateWeekDay.Saturday];
+        public static let All : DateWeekDay = [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday];
+        public static let allWeekDays : [DateWeekDay] = [DateWeekDay.Sunday, DateWeekDay.Monday, DateWeekDay.Tuesday, DateWeekDay.Wednesday, DateWeekDay.Thursday, DateWeekDay.Friday, DateWeekDay.Saturday];
         //static let strings : [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
         static let strings : [String] = ["일", "월", "화", "수", "목", "금", "토"];
         
         /**
             Weekdays contained in this week day set
         */
-        var days : [DateWeekDay]{
+        public var days : [DateWeekDay]{
             get{
                 return DateWeekDay.allWeekDays.filter({ (weekday) -> Bool in
                     return self.intersection(weekday) == weekday;
@@ -58,7 +58,7 @@ extension DateComponents{
         /**
             Description of this week day set
         */
-        var string : String{
+        public var string : String{
             get{
                 var value = "";
                 
@@ -80,7 +80,7 @@ extension DateComponents{
         /**
             Raw value of week day set
         */
-        var weekday : Int{
+        public var weekday : Int{
             get{
                 return (DateWeekDay.allWeekDays.index(of: self) ?? 0) + 1;
             }
@@ -90,7 +90,7 @@ extension DateComponents{
     /**
         Week day set converted from raw weekday
     */
-    var weekDay : DateWeekDay?{
+    public var weekDay : DateWeekDay?{
         get{
             var value : DateWeekDay?;
             
@@ -114,7 +114,7 @@ extension DateComponents{
         - parameter minutes: Minutes to subtract from this
         - note: this function doesn't decrease day. decreasing will perform with only time values
     */
-    mutating func decreaseMinutes(_ minutes : Int){
+    public mutating func decreaseMinutes(_ minutes : Int){
         guard self.minute != nil else{
             return;
         }
@@ -137,7 +137,7 @@ extension DateComponents{
         - returns: new DateComponents with subtracted given minutes from this
         - note: this function doesn't decrease day. decreasing will perform with only time values
     */
-    func decreasingMinutes(_ minutes: Int) -> DateComponents{
+    public func decreasingMinutes(_ minutes: Int) -> DateComponents{
         var value = self;
         value.decreaseMinutes(minutes);
         
@@ -147,7 +147,7 @@ extension DateComponents{
     /**
         Time description for this DateComponents
     */
-    var timeString : String{
+    public var timeString : String{
         get{
             var value = "";
             
@@ -164,7 +164,7 @@ extension DateComponents{
     /**
          TimeInterval(Seconds) generated with hour, minute, second of this DateComponents
      */
-    var time : TimeInterval{
+    public var time : TimeInterval{
         var value = (self.hour ?? 0) * 60 * 60;
         value += (self.minute ?? 0) * 60;
         value += (self.second ?? 0);

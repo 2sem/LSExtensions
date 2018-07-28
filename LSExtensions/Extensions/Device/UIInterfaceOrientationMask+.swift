@@ -12,21 +12,21 @@ extension UIInterfaceOrientationMask{
     /**
         The orientation is portrait or portraitUpDown
     */
-    var isPortrait : Bool{
+    public var isPortrait : Bool{
         return self.contains(.portrait) || self.contains(.portraitUpsideDown);
     }
     
     /**
         The orientation is landscapeLeft or landsacpeRight
     */
-    var isLandscape : Bool{
+    public var isLandscape : Bool{
         return self.contains(.landscapeRight) || self.contains(.landscapeRight) || self.contains(.landscape);
     }
     
     /**
         Orientations contained in this mask
     */
-    var orientations : [UIInterfaceOrientation]{
+    public var orientations : [UIInterfaceOrientation]{
         var values : [UIInterfaceOrientation] = [];
         
         if self.contains(.portrait){

@@ -18,7 +18,7 @@ extension UIDevice{
         Set orientation of this device forcely
         - parameter orientation: device orientation
     */
-    func setOrientation(_ orientation: UIDeviceOrientation){
+    public func setOrientation(_ orientation: UIDeviceOrientation){
         self.setValue(orientation.rawValue.description, forKey: ValueKeys.orientation);
     }
     
@@ -26,7 +26,7 @@ extension UIDevice{
          Set orientation of this device forcely
          - parameter byRaw: The Int value device orientation
      */
-    func setOrientation(byRaw value: Int){
+    public func setOrientation(byRaw value: Int){
         guard let orientation = UIDeviceOrientation.init(rawValue: value) else{
             return;
         }

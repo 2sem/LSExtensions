@@ -16,7 +16,7 @@ extension UIAlertController{
     /**
         content for alert controller
     */
-    var contentViewController : UIViewController?{
+    public var contentViewController : UIViewController?{
         get{
             return self.value(forKey: HiddenPropertyNames.contentViewController) as? UIViewController;
         }
