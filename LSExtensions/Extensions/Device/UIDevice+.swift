@@ -33,4 +33,29 @@ extension UIDevice{
         
         self.setValue(orientation.rawValue.description, forKey: ValueKeys.orientation);
     }
+    
+    /**
+         Total Disk Size
+         - reference : https://stackoverflow.com/questions/26198073/query-available-ios-disk-space-with-swift
+     */
+    public static var totalCapacity: Int64? {
+        guard let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory() as String),
+            let value = (systemAttributes[.systemSize] as? NSNumber)?.int64Value else {
+                return nil
+        }
+        
+        return value;
+    }
+    
+    /**
+         Free Disk Size remained
+     */
+    public static var availableCapacity: Int64? {
+        guard let systemAttributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory() as String),
+            let value = (systemAttributes[.systemFreeSize] as? NSNumber)?.int64Value else {
+                return nil
+        }
+        
+        return value;
+    }
 }

@@ -9,10 +9,23 @@
 import Foundation
 
 extension NSError{
+    /**
+        Creates unknown error with code
+    */
+    public static func unknown(_ code : Int = -1) -> Error{
+        return NSError.init(domain: "Unknown", code: code, userInfo: nil);
+    }
+    
+    /**
+        Whether this error's domain is assistant
+    */
     public var isAssistantError : Bool{
         return self.domain == "kAFAssistantErrorDomain";
     }
     
+    /**
+        Is this error's domain is referenced to Siri?
+    */
     public var siriError : NSError?{
         var value : NSError?;
         if self.isAssistantError{
@@ -24,6 +37,9 @@ extension NSError{
         return value;
     }
     
+    /**
+        Is this error for the Siri connection?
+    */
     public var isSiriConnectionError : Bool{
         var value = false;
         

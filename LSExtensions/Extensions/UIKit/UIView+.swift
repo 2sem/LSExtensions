@@ -317,7 +317,7 @@ extension UIView{
         - returns : parent view found by given type
     */
     public func parent<T : UIView>(type: T.Type) -> T?{
-        var parent = self.superview;
+        let parent = self.superview;
         
         return parent is T ? parent as? T : parent?.parent(type: T.self);
     }

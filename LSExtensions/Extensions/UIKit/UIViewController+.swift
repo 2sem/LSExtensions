@@ -396,5 +396,31 @@ extension UIViewController {
         
         return viewController;
     }
+    
+    /**
+        Whether to show navigationbar when SearchResultsController is appeared
+     */
+    public var hidesNavigationBarWhenSearchResultAppeared : Bool{
+        get{
+            return !self.definesPresentationContext;
+        }
+        
+        set(value){
+            self.definesPresentationContext = !value;
+        }
+    }
+    
+    /**
+        Whether to prevent increasing of navigation bar height
+     */
+    public var increasingNavigationBarSizeEnabled : Bool{
+        get{
+            return !self.extendedLayoutIncludesOpaqueBars
+        }
+        
+        set(value){
+            return self.extendedLayoutIncludesOpaqueBars = !value;
+        }
+    }
 }
 

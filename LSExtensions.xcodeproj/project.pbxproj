@@ -45,6 +45,8 @@
 		2C14C080210C108700694D2C /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14C07F210C108700694D2C /* UIAlertController+.swift */; };
 		2C14C082210C113200694D2C /* DateComponents+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14C081210C113200694D2C /* DateComponents+.swift */; };
 		2C14C55120983EB200D3C5A4 /* NSError+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14C55020983EB200D3C5A4 /* NSError+.swift */; };
+		2C1B949F211536300082F5AC /* NSMutableAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B949E211536300082F5AC /* NSMutableAttributedString+.swift */; };
+		2C1B94A1211536C80082F5AC /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B94A0211536C80082F5AC /* UITableView+.swift */; };
 		2C2042122093497000132E57 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2042112093497000132E57 /* UIWindow+.swift */; };
 		2C75E7B22087892C00F1EFE2 /* LSExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */; };
 		2C75E7B72087892C00F1EFE2 /* LSExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C75E7B62087892C00F1EFE2 /* LSExtensionsTests.swift */; };
@@ -109,6 +111,8 @@
 		2C14C07F210C108700694D2C /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 		2C14C081210C113200694D2C /* DateComponents+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+.swift"; sourceTree = "<group>"; };
 		2C14C55020983EB200D3C5A4 /* NSError+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+.swift"; sourceTree = "<group>"; };
+		2C1B949E211536300082F5AC /* NSMutableAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+.swift"; sourceTree = "<group>"; };
+		2C1B94A0211536C80082F5AC /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		2C2042112093497000132E57 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LSExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSExtensions.h; sourceTree = "<group>"; };
@@ -316,6 +320,8 @@
 				2C14A5DF209B324A00D71BF5 /* UIButton.swift */,
 				2C1316D32102DB670067D75A /* UIBarButtonItem+.swift */,
 				2C14C07F210C108700694D2C /* UIAlertController+.swift */,
+				2C1B949E211536300082F5AC /* NSMutableAttributedString+.swift */,
+				2C1B94A0211536C80082F5AC /* UITableView+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1B949F211536300082F5AC /* NSMutableAttributedString+.swift in Sources */,
 				2C10590B2090A2CC0064E933 /* Notification+.swift in Sources */,
 				2CE2699D208B343F00DB03E4 /* UIViewController+.swift in Sources */,
 				2C1316B12102C2600067D75A /* AVPlayerItem+.swift in Sources */,
@@ -453,6 +460,7 @@
 				2C1216E7208F333200B51D91 /* CNContact+.swift in Sources */,
 				2CE2699F208B344600DB03E4 /* NSNotification+.swift in Sources */,
 				2CA5B432208A1F5F008DE954 /* String+.swift in Sources */,
+				2C1B94A1211536C80082F5AC /* UITableView+.swift in Sources */,
 				2C1316B92102C51F0067D75A /* AVAudioSession+.swift in Sources */,
 				2C1316C72102C9540067D75A /* URL+.swift in Sources */,
 				2C1316AE2102C14E0067D75A /* Double+.swift in Sources */,
