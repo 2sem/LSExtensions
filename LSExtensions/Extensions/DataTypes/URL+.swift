@@ -16,4 +16,11 @@ extension URL{
     public var isWebURL : Bool{
         return ["http", "https"].contains(self.scheme?.lowercased() ?? "");
     }
+    
+    /**
+        Indicator whether this path is a exist file
+    */
+    public var isExist : Bool{
+        return FileManager.default.fileExists(atPath: self.path);
+    }
 }

@@ -45,6 +45,11 @@
 		2C14C080210C108700694D2C /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14C07F210C108700694D2C /* UIAlertController+.swift */; };
 		2C14C082210C113200694D2C /* DateComponents+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14C081210C113200694D2C /* DateComponents+.swift */; };
 		2C14C55120983EB200D3C5A4 /* NSError+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14C55020983EB200D3C5A4 /* NSError+.swift */; };
+		2C178B5C2158AF50007353D3 /* UIToolbar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C178B5B2158AF50007353D3 /* UIToolbar+.swift */; };
+		2C178B5E2158AFCF007353D3 /* Float+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C178B5D2158AFCF007353D3 /* Float+.swift */; };
+		2C179ECF2159195A00102B89 /* MPVolumeView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179ECE2159195A00102B89 /* MPVolumeView+.swift */; };
+		2C179ED121591B7600102B89 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179ED021591B7600102B89 /* UIColor+.swift */; };
+		2C179ED32159243C00102B89 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C179ED22159243C00102B89 /* UILabel+.swift */; };
 		2C1B949F211536300082F5AC /* NSMutableAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B949E211536300082F5AC /* NSMutableAttributedString+.swift */; };
 		2C1B94A1211536C80082F5AC /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B94A0211536C80082F5AC /* UITableView+.swift */; };
 		2C2042122093497000132E57 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2042112093497000132E57 /* UIWindow+.swift */; };
@@ -111,6 +116,11 @@
 		2C14C07F210C108700694D2C /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 		2C14C081210C113200694D2C /* DateComponents+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+.swift"; sourceTree = "<group>"; };
 		2C14C55020983EB200D3C5A4 /* NSError+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+.swift"; sourceTree = "<group>"; };
+		2C178B5B2158AF50007353D3 /* UIToolbar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIToolbar+.swift"; sourceTree = "<group>"; };
+		2C178B5D2158AFCF007353D3 /* Float+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+.swift"; sourceTree = "<group>"; };
+		2C179ECE2159195A00102B89 /* MPVolumeView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MPVolumeView+.swift"; sourceTree = "<group>"; };
+		2C179ED021591B7600102B89 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		2C179ED22159243C00102B89 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		2C1B949E211536300082F5AC /* NSMutableAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+.swift"; sourceTree = "<group>"; };
 		2C1B94A0211536C80082F5AC /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		2C2042112093497000132E57 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
@@ -184,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				2C1316BB2102C5680067D75A /* MPRemoteCommandCenter+.swift */,
+				2C179ECE2159195A00102B89 /* MPVolumeView+.swift */,
 			);
 			path = MediaPlayer;
 			sourceTree = "<group>";
@@ -222,6 +233,7 @@
 				2C1316C42102C8D00067D75A /* URLComponents+.swift */,
 				2C1316BD2102C5A10067D75A /* Error+.swift */,
 				2C1316AD2102C14D0067D75A /* Double+.swift */,
+				2C178B5D2158AFCF007353D3 /* Float+.swift */,
 				2C105906209098800064E933 /* UIImage+.swift */,
 				2CA5B431208A1F5F008DE954 /* String+.swift */,
 				2CA5B42F2089DF8A008DE954 /* Int+.swift */,
@@ -322,6 +334,9 @@
 				2C14C07F210C108700694D2C /* UIAlertController+.swift */,
 				2C1B949E211536300082F5AC /* NSMutableAttributedString+.swift */,
 				2C1B94A0211536C80082F5AC /* UITableView+.swift */,
+				2C178B5B2158AF50007353D3 /* UIToolbar+.swift */,
+				2C179ED021591B7600102B89 /* UIColor+.swift */,
+				2C179ED22159243C00102B89 /* UILabel+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -436,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C179ED32159243C00102B89 /* UILabel+.swift in Sources */,
 				2C1B949F211536300082F5AC /* NSMutableAttributedString+.swift in Sources */,
 				2C10590B2090A2CC0064E933 /* Notification+.swift in Sources */,
 				2CE2699D208B343F00DB03E4 /* UIViewController+.swift in Sources */,
@@ -454,6 +470,7 @@
 				2C12F5CC208D6B6200B6D2D9 /* Data+.swift in Sources */,
 				2C14C082210C113200694D2C /* DateComponents+.swift in Sources */,
 				2C1316CE2102D89B0067D75A /* UIPopoverPresentationControllerDelegate+.swift in Sources */,
+				2C178B5E2158AFCF007353D3 /* Float+.swift in Sources */,
 				2C14A5DE209B318A00D71BF5 /* UIImageView+.swift in Sources */,
 				2C1316DF2102E45B0067D75A /* CountableClosedRange+.swift in Sources */,
 				2C1316AC2102C01A0067D75A /* CMTime+.swift in Sources */,
@@ -475,10 +492,13 @@
 				2C1316D42102DB670067D75A /* UIBarButtonItem+.swift in Sources */,
 				2C105907209098800064E933 /* UIImage+.swift in Sources */,
 				2CA5B434208A24D3008DE954 /* Character+.swift in Sources */,
+				2C179ED121591B7600102B89 /* UIColor+.swift in Sources */,
 				2C14C07C210C097F00694D2C /* UIDevice+.swift in Sources */,
 				2C1316D22102DB380067D75A /* UITableViewCell+.swift in Sources */,
+				2C178B5C2158AF50007353D3 /* UIToolbar+.swift in Sources */,
 				2C14C07E210C0ABF00694D2C /* UIInterfaceOrientationMask+.swift in Sources */,
 				2C1316AA2102BF080067D75A /* UIPopoverPresentationController+.swift in Sources */,
+				2C179ECF2159195A00102B89 /* MPVolumeView+.swift in Sources */,
 				2C1316BE2102C5A10067D75A /* Error+.swift in Sources */,
 				2C1316B52102C35D0067D75A /* AVPlayer+.swift in Sources */,
 				2C1316C52102C8D00067D75A /* URLComponents+.swift in Sources */,

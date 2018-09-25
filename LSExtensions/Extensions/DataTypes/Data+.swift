@@ -15,4 +15,18 @@ extension Data{
     public var hexString : String{
         return self.reduce("", {$0 + String(format: "%02X", $1)});
     }
+    
+    /**
+        string generated with this data and given utf8
+    */
+    public var utf8 : String?{
+        return String.init(data: self, encoding: .utf8);
+    }
+    
+    /**
+        string generated with this data and given encoding
+    */
+    public func string(_ encoding: String.Encoding = .utf8) -> String?{
+        return String.init(data: self, encoding: encoding);
+    }
 }

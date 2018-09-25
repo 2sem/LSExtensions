@@ -52,4 +52,8 @@ extension NSObject{
     public var lastClassName : String{
         return NSStringFromClass(type(of: self)).components(separatedBy: ".").last ?? "";
     }
+    
+    public func ifNil<T : NSObject>(_ value : T) -> T{
+        return (self == nil) ? (value as! T) : self as! T;
+    }
 }

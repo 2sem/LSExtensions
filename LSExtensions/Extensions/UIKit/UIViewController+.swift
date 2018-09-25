@@ -10,6 +10,7 @@ import Foundation
 
 import UIKit
 import CoreLocation
+import SafariServices
 
 extension UIViewController {
     /**
@@ -421,6 +422,27 @@ extension UIViewController {
         set(value){
             return self.extendedLayoutIncludesOpaqueBars = !value;
         }
+    }
+    
+    /**
+        open url in the safari view with given configuration
+        - parameter url: url to open in the safari
+        - parameter configuration: safari configuration
+    */
+    @available(iOS 11.0, *)
+    public func openWithSafari(_ url: URL, configuration: SFSafariViewController.Configuration, animated: Bool = true){
+        let webView = SFSafariViewController(url: url);
+        SFSafariViewController.init(url: url, configuration: configuration);
+        self.present(webView, animated: animated, completion: nil);
+    }
+    
+    /**
+         open url in the safari view with given configuration
+         - parameter url: url to open in the safari
+    */
+    public func openWithSafari(_ url: URL, animated: Bool = true){
+        let webView = SFSafariViewController(url: url);
+        self.present(webView, animated: animated, completion: nil);
     }
 }
 

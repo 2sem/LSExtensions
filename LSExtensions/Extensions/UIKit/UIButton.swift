@@ -12,7 +12,7 @@ extension UIButton{
     /**
         Fit image of this button as aspec scale
     */
-    var imageAspectFit : Bool{
+    public var imageAspectFit : Bool{
         get{
             var value = false;
             guard self.imageView != nil else{
@@ -32,7 +32,7 @@ extension UIButton{
     /**
         Align title to center
     */
-    var titleCenter : Bool{
+    public var titleCenter : Bool{
         get{
             return true;
         }

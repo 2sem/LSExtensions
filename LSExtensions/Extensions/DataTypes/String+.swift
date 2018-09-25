@@ -420,6 +420,14 @@ extension String {
         //return formatter.number(from: self)?.intValue ?? 0;
         return Int(self.replacingOccurrences(of: ",", with: "")) ?? 0;
     }
+    
+    /**
+        returns given value if this string is nil
+         - parameter value: the value to return instead this if this is nil
+    */
+    public func ifEmpty(_ value : String) -> String{
+        return self.isEmpty ? value : self;
+    }
 }
 
 enum StringExtensionError : Error{
