@@ -53,7 +53,7 @@ extension NSObject{
         return NSStringFromClass(type(of: self)).components(separatedBy: ".").last ?? "";
     }
     
-    public func ifNil<T : NSObject>(_ value : T) -> T{
-        return (self == nil) ? (value as! T) : self as! T;
+    static func ifNil<T>(_ original: T?, value: T) -> T{
+        return (original == nil) ? value : original!;
     }
 }

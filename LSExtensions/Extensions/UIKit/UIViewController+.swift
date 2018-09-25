@@ -431,8 +431,7 @@ extension UIViewController {
     */
     @available(iOS 11.0, *)
     public func openWithSafari(_ url: URL, configuration: SFSafariViewController.Configuration, animated: Bool = true){
-        let webView = SFSafariViewController(url: url);
-        SFSafariViewController.init(url: url, configuration: configuration);
+        let webView = SFSafariViewController.init(url: url, configuration: configuration);
         self.present(webView, animated: animated, completion: nil);
     }
     

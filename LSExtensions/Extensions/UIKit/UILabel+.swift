@@ -20,6 +20,6 @@ extension UILabel{
         }
         self.attributedText = try? NSAttributedString.init(data: data,
                                                            options: [.documentType : NSAttributedString.DocumentType.html, .characterEncoding : encoding.rawValue],
-                                                           documentAttributes: nil) ?? NSAttributedString();
+                                                           documentAttributes: nil);
     }
 }
