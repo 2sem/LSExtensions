@@ -9,11 +9,11 @@
 import UIKit
 
 extension UIWebView {
-    func fitToWidth(){
+    open func fitToWidth(){
         self.stringByEvaluatingJavaScript(from: "document.querySelector('meta[name=viewport]').setAttribute('content', 'width=\(self.frame.size.width);', false);");
     }
     
-    func fitToSize(){
+    open func fitToSize(){
         self.stringByEvaluatingJavaScript(from: "document.querySelector('meta[name=viewport]').setAttribute('content', 'width=\(self.frame.size.width);height=\(self.frame.size.height);', false);");
     }
 }

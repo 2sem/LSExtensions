@@ -9,11 +9,11 @@
 import WebKit
 
 extension WKWebView {
-    func fitToWidth(){
+    public func fitToWidth(){
         self.evaluateJavaScript("document.querySelector('meta[name=viewport]').setAttribute('content', 'width=\(self.frame.size.width);', false);", completionHandler: nil);
     }
     
-    func fitToSize(){
+    public func fitToSize(){
         self.evaluateJavaScript("document.querySelector('meta[name=viewport]').setAttribute('content', 'width=\(self.frame.size.width);height=\(self.frame.size.height);', false);", completionHandler: nil);
     }
 }

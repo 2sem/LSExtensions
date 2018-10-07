@@ -286,14 +286,14 @@ extension UIApplication{
     /**
         Indication whether this application is on foreground
     */
-    var isForeground : Bool{
+    public var isForeground : Bool{
         return [UIApplicationState.active].contains(UIApplication.shared.applicationState);
     }
     
     /**
         Indication whether this application is in background
      */
-    var isBackground : Bool{
+    public var isBackground : Bool{
         return [UIApplicationState.inactive, UIApplicationState.background].contains(UIApplication.shared.applicationState);
     }
 }

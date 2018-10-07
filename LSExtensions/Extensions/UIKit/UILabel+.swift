@@ -22,4 +22,19 @@ extension UILabel{
                                                            options: [.documentType : NSAttributedString.DocumentType.html, .characterEncoding : encoding.rawValue],
                                                            documentAttributes: nil);
     }
+    
+    /**
+        Gets size of the text in this label
+    */
+    open var rectForText : CGRect{
+        let label = UILabel.init(frame: CGRect.zero);
+        label.numberOfLines = self.numberOfLines;
+        label.font = self.font;
+        label.text = self.text;
+        label.sizeToFit();
+        
+        // + 5
+        return CGRect.init(origin: label.bounds.origin, size: CGSize(width: label.bounds.width, height: label.bounds.height));
+        //return (self.text as NSString?)?.boundingRect(with: self.bounds.size, options: [.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font : self.font], context: nil) ?? CGRect.zero;
+    }
 }

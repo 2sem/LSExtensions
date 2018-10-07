@@ -12,7 +12,7 @@ extension URLRequest{
     /**
          Property for body of POST Method to set or get parameters
      */
-    var postParams : [String : String]{
+    public var postParams : [String : String]{
         get{
             return self.getPost();
         }
@@ -25,7 +25,7 @@ extension URLRequest{
     /**
          Gets paramters for the POST Method
      */
-    internal func getPost(encoding: String.Encoding = .utf8) -> [String : String]{
+    public func getPost(encoding: String.Encoding = .utf8) -> [String : String]{
         return (String.init(data: self.httpBody ?? Data(), encoding: .utf8)?
             .components(separatedBy: "&").reduce(into: [String : String](), { (dict, param) in
                 var keyvalue = param.components(separatedBy: "=");
@@ -41,7 +41,7 @@ extension URLRequest{
     /**
          Sets paramters for the POST Method
      */
-    internal mutating func setPost(params: [String : String], encoding: String.Encoding = .utf8){
+    public mutating func setPost(params: [String : String], encoding: String.Encoding = .utf8){
         self.httpBody = params.map{ "\($0)=\($1)" }.joined(separator: "&").data(using: encoding);
     }
 }

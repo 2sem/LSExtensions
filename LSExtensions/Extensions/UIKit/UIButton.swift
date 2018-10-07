@@ -50,7 +50,7 @@ extension UIButton{
     /**
          Indication whether content of this button is overflowed and truncated
      */
-    var isOverFlowed : Bool{
+    public var isOverFlowed : Bool{
         guard let label = self.titleLabel else{
             return false;
         }
@@ -66,7 +66,7 @@ extension UIButton{
     /**
          Size of the content in this button
      */
-    var contentSize : CGRect{
+    public var contentSize : CGRect{
         return CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: self.frame.width - contentEdgeInsets.left - contentEdgeInsets.right, height: self.frame.height - contentEdgeInsets.top - contentEdgeInsets.bottom));
     }
     
