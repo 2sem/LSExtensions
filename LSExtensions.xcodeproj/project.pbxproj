@@ -10,6 +10,9 @@
 		2C105907209098800064E933 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C105906209098800064E933 /* UIImage+.swift */; };
 		2C10590B2090A2CC0064E933 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10590A2090A2CC0064E933 /* Notification+.swift */; };
 		2C1216E7208F333200B51D91 /* CNContact+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1216E6208F333200B51D91 /* CNContact+.swift */; };
+		2C122A2B2169BBD90051CEF9 /* WKWebView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C122A2A2169BBD90051CEF9 /* WKWebView+.swift */; };
+		2C122A2D2169BC070051CEF9 /* UIWebView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C122A2C2169BC070051CEF9 /* UIWebView+.swift */; };
+		2C122A312169BEA20051CEF9 /* URLRequest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C122A302169BEA20051CEF9 /* URLRequest+.swift */; };
 		2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C4208D663100B6D2D9 /* UIView+.swift */; };
 		2C12F5CA208D67D800B6D2D9 /* DispatchQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */; };
 		2C12F5CC208D6B6200B6D2D9 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C12F5CB208D6B6200B6D2D9 /* Data+.swift */; };
@@ -81,6 +84,9 @@
 		2C105906209098800064E933 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		2C10590A2090A2CC0064E933 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		2C1216E6208F333200B51D91 /* CNContact+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNContact+.swift"; sourceTree = "<group>"; };
+		2C122A2A2169BBD90051CEF9 /* WKWebView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+.swift"; sourceTree = "<group>"; };
+		2C122A2C2169BC070051CEF9 /* UIWebView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWebView+.swift"; sourceTree = "<group>"; };
+		2C122A302169BEA20051CEF9 /* URLRequest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+.swift"; sourceTree = "<group>"; };
 		2C12F5C4208D663100B6D2D9 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2C12F5C9208D67D800B6D2D9 /* DispatchQueue+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+.swift"; sourceTree = "<group>"; };
 		2C12F5CB208D6B6200B6D2D9 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
@@ -168,6 +174,30 @@
 				2C14A5E2209B3D9800D71BF5 /* CNContactStore+.swift */,
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		2C122A292169BBB20051CEF9 /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				2C122A2A2169BBD90051CEF9 /* WKWebView+.swift */,
+			);
+			path = WebKit;
+			sourceTree = "<group>";
+		};
+		2C122A2E2169BE820051CEF9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				2C122A2F2169BE920051CEF9 /* Web */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		2C122A2F2169BE920051CEF9 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				2C122A302169BEA20051CEF9 /* URLRequest+.swift */,
+			);
+			name = Web;
 			sourceTree = "<group>";
 		};
 		2C12F5C8208D673400B6D2D9 /* Thread */ = {
@@ -287,6 +317,8 @@
 		2C75E7C220878FCF00F1EFE2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2C122A2E2169BE820051CEF9 /* Foundation */,
+				2C122A292169BBB20051CEF9 /* WebKit */,
 				2C1316D72102DDB70067D75A /* Objc */,
 				2C1316BA2102C5550067D75A /* MediaPlayer */,
 				2C1316AF2102C22F0067D75A /* AVFoundation */,
@@ -297,7 +329,6 @@
 				2C19CD8220898A58003E456F /* DataTypes */,
 				2C1316C12102C6E60067D75A /* FileSystem */,
 				2C1316B22102C2CF0067D75A /* NSObject+.swift */,
-				2C75E7C32087900600F1EFE2 /* UIApplication+.swift */,
 				2CE26996208B279200DB03E4 /* Locale+.swift */,
 			);
 			path = Extensions;
@@ -318,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				2C1316C82102CF190067D75A /* Animation */,
+				2C75E7C32087900600F1EFE2 /* UIApplication+.swift */,
 				2C1316BF2102C6820067D75A /* UIAlertAction+.swift */,
 				2C1316A92102BF070067D75A /* UIPopoverPresentationController+.swift */,
 				2C14A5DD209B318A00D71BF5 /* UIImageView+.swift */,
@@ -337,6 +369,7 @@
 				2C178B5B2158AF50007353D3 /* UIToolbar+.swift */,
 				2C179ED021591B7600102B89 /* UIColor+.swift */,
 				2C179ED22159243C00102B89 /* UILabel+.swift */,
+				2C122A2C2169BC070051CEF9 /* UIWebView+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -478,6 +511,7 @@
 				2CE2699F208B344600DB03E4 /* NSNotification+.swift in Sources */,
 				2CA5B432208A1F5F008DE954 /* String+.swift in Sources */,
 				2C1B94A1211536C80082F5AC /* UITableView+.swift in Sources */,
+				2C122A312169BEA20051CEF9 /* URLRequest+.swift in Sources */,
 				2C1316B92102C51F0067D75A /* AVAudioSession+.swift in Sources */,
 				2C1316C72102C9540067D75A /* URL+.swift in Sources */,
 				2C1316AE2102C14E0067D75A /* Double+.swift in Sources */,
@@ -499,10 +533,12 @@
 				2C14C07E210C0ABF00694D2C /* UIInterfaceOrientationMask+.swift in Sources */,
 				2C1316AA2102BF080067D75A /* UIPopoverPresentationController+.swift in Sources */,
 				2C179ECF2159195A00102B89 /* MPVolumeView+.swift in Sources */,
+				2C122A2B2169BBD90051CEF9 /* WKWebView+.swift in Sources */,
 				2C1316BE2102C5A10067D75A /* Error+.swift in Sources */,
 				2C1316B52102C35D0067D75A /* AVPlayer+.swift in Sources */,
 				2C1316C52102C8D00067D75A /* URLComponents+.swift in Sources */,
 				2C1316DB2102DDD10067D75A /* ObjcHelper.m in Sources */,
+				2C122A2D2169BC070051CEF9 /* UIWebView+.swift in Sources */,
 				2C1316B32102C2CF0067D75A /* NSObject+.swift in Sources */,
 				2CA5B436208A24F3008DE954 /* Array+.swift in Sources */,
 			);

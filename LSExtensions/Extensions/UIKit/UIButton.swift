@@ -48,6 +48,29 @@ extension UIButton{
     }
     
     /**
+         Indication whether content of this button is overflowed and truncated
+     */
+    var isOverFlowed : Bool{
+        guard let label = self.titleLabel else{
+            return false;
+        }
+        
+        guard label.numberOfLines != 0 else{
+            return false;
+        }
+        
+        //label.bounds
+        return !self.contentSize.contains(label.rectForText);
+    }
+    
+    /**
+         Size of the content in this button
+     */
+    var contentSize : CGRect{
+        return CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: self.frame.width - contentEdgeInsets.left - contentEdgeInsets.right, height: self.frame.height - contentEdgeInsets.top - contentEdgeInsets.bottom));
+    }
+    
+    /**
         Returns new button created with the properties of this
     */
     public func clone() -> UIButton{

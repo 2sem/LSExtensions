@@ -282,4 +282,18 @@ extension UIApplication{
     public var mostTopViewController : UIViewController?{
         return self.windows.first?.rootViewController?.mostTopViewController;
     }
+    
+    /**
+        Indication whether this application is on foreground
+    */
+    var isForeground : Bool{
+        return [UIApplicationState.active].contains(UIApplication.shared.applicationState);
+    }
+    
+    /**
+        Indication whether this application is in background
+     */
+    var isBackground : Bool{
+        return [UIApplicationState.inactive, UIApplicationState.background].contains(UIApplication.shared.applicationState);
+    }
 }
