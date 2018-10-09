@@ -32,13 +32,13 @@ extension DateComponents{
             self.rawValue = rawValue;
         }
         
-        static let Sunday = DateWeekDay.init(rawValue: 1);
-        static let Monday = DateWeekDay.init(rawValue: 1 << 1);
-        static let Tuesday = DateWeekDay.init(rawValue: 1 << 2);
-        static let Wednesday = DateWeekDay.init(rawValue: 1 << 3);
-        static let Thursday = DateWeekDay.init(rawValue: 1 << 4);
-        static let Friday = DateWeekDay.init(rawValue: 1 << 5);
-        static let Saturday = DateWeekDay.init(rawValue: 1 << 6);
+        public static let Sunday = DateWeekDay.init(rawValue: 1);
+        public static let Monday = DateWeekDay.init(rawValue: 1 << 1);
+        public static let Tuesday = DateWeekDay.init(rawValue: 1 << 2);
+        public static let Wednesday = DateWeekDay.init(rawValue: 1 << 3);
+        public static let Thursday = DateWeekDay.init(rawValue: 1 << 4);
+        public static let Friday = DateWeekDay.init(rawValue: 1 << 5);
+        public static let Saturday = DateWeekDay.init(rawValue: 1 << 6);
         public static let All : DateWeekDay = [.Sunday, .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday];
         public static let allWeekDays : [DateWeekDay] = [DateWeekDay.Sunday, DateWeekDay.Monday, DateWeekDay.Tuesday, DateWeekDay.Wednesday, DateWeekDay.Thursday, DateWeekDay.Friday, DateWeekDay.Saturday];
         //static let strings : [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
