@@ -40,6 +40,7 @@
 		2C1316DB2102DDD10067D75A /* ObjcHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1316D92102DDD10067D75A /* ObjcHelper.m */; };
 		2C1316DD2102DF180067D75A /* UIScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1316DC2102DF180067D75A /* UIScrollView+.swift */; };
 		2C1316DF2102E45B0067D75A /* CountableClosedRange+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1316DE2102E45B0067D75A /* CountableClosedRange+.swift */; };
+		2C13C7D9217C66580079173F /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C13C7D8217C66580079173F /* Collection+.swift */; };
 		2C14A5DE209B318A00D71BF5 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14A5DD209B318A00D71BF5 /* UIImageView+.swift */; };
 		2C14A5E0209B324A00D71BF5 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14A5DF209B324A00D71BF5 /* UIButton.swift */; };
 		2C14A5E3209B3D9800D71BF5 /* CNContactStore+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C14A5E2209B3D9800D71BF5 /* CNContactStore+.swift */; };
@@ -114,6 +115,7 @@
 		2C1316D92102DDD10067D75A /* ObjcHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcHelper.m; sourceTree = "<group>"; };
 		2C1316DC2102DF180067D75A /* UIScrollView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+.swift"; sourceTree = "<group>"; };
 		2C1316DE2102E45B0067D75A /* CountableClosedRange+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CountableClosedRange+.swift"; sourceTree = "<group>"; };
+		2C13C7D8217C66580079173F /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
 		2C14A5DD209B318A00D71BF5 /* UIImageView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		2C14A5DF209B324A00D71BF5 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		2C14A5E2209B3D9800D71BF5 /* CNContactStore+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNContactStore+.swift"; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				2C12F5CB208D6B6200B6D2D9 /* Data+.swift */,
 				2C14C55020983EB200D3C5A4 /* NSError+.swift */,
 				2C14C081210C113200694D2C /* DateComponents+.swift */,
+				2C13C7D8217C66580079173F /* Collection+.swift */,
 			);
 			path = DataTypes;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				2C122A2D2169BC070051CEF9 /* UIWebView+.swift in Sources */,
 				2C1316B32102C2CF0067D75A /* NSObject+.swift in Sources */,
 				2CA5B436208A24F3008DE954 /* Array+.swift in Sources */,
+				2C13C7D9217C66580079173F /* Collection+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

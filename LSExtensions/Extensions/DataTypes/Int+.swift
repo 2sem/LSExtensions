@@ -97,9 +97,8 @@ extension Int{
         var posStrings = ["", "십", "백", "천"];
         var value = "";
         var remain = self;
-        var units = ["","만","억"];
-        var nums : [[Int]] = [[Int]].init(repeating: [], count: 3);
-        //var unit = 0;
+        var units = ["","만","억", "조", "경"];
+        var nums : [[Int]] = [[Int]].init(repeating: [], count: 5);
         var i = 0;
         
         while(remain > 0){
