@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0177A821AD74C0003CDE7E /* Comparable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0177A721AD74C0003CDE7E /* Comparable+.swift */; };
 		2C105907209098800064E933 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C105906209098800064E933 /* UIImage+.swift */; };
 		2C10590B2090A2CC0064E933 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10590A2090A2CC0064E933 /* Notification+.swift */; };
 		2C1216E7208F333200B51D91 /* CNContact+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1216E6208F333200B51D91 /* CNContact+.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0177A721AD74C0003CDE7E /* Comparable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+.swift"; sourceTree = "<group>"; };
 		2C105906209098800064E933 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		2C10590A2090A2CC0064E933 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		2C1216E6208F333200B51D91 /* CNContact+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNContact+.swift"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				2C14C55020983EB200D3C5A4 /* NSError+.swift */,
 				2C14C081210C113200694D2C /* DateComponents+.swift */,
 				2C13C7D8217C66580079173F /* Collection+.swift */,
+				2C0177A721AD74C0003CDE7E /* Comparable+.swift */,
 			);
 			path = DataTypes;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				2C178B5E2158AFCF007353D3 /* Float+.swift in Sources */,
 				2C14A5DE209B318A00D71BF5 /* UIImageView+.swift in Sources */,
 				2C1316DF2102E45B0067D75A /* CountableClosedRange+.swift in Sources */,
+				2C0177A821AD74C0003CDE7E /* Comparable+.swift in Sources */,
 				2C1316AC2102C01A0067D75A /* CMTime+.swift in Sources */,
 				2C1216E7208F333200B51D91 /* CNContact+.swift in Sources */,
 				2CE2699F208B344600DB03E4 /* NSNotification+.swift in Sources */,

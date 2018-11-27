@@ -296,4 +296,18 @@ extension UIApplication{
     public var isBackground : Bool{
         return [UIApplicationState.inactive, UIApplicationState.background].contains(UIApplication.shared.applicationState);
     }
+    
+    /**
+         Value of property named of 'CFBundleVersionString' in Info.plist
+     */
+    public var buildVersion : String{
+        get{
+            var value = Bundle.main.localizedInfoDictionary?["CFBundleVersion"] as? String;
+            if value == nil{
+                value = Bundle.main.infoDictionary?["CFBundleVersion"] as? String;
+            }
+            
+            return value ?? "";
+        }
+    }
 }
