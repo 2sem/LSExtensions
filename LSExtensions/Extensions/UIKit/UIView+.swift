@@ -249,9 +249,11 @@ extension UIView{
      */
     public func rotate(_ angle: CGFloat, anchor: CGPoint = CGPoint.init(x: 0.5, y: 0.5)){
         let radian = angle / 180.0 * CGFloat(Double.pi);
-        self.layer.anchorPoint = CGPoint(x: anchor.x / self.frame.width, y: anchor.y / self.frame.height);
-        self.transform = self.transform.translatedBy(x: -anchor.x, y: 0);
+        let anchorOffset = CGPoint.init(x: anchor.x - self.layer.anchorPoint.x, y: anchor.y - self.layer.anchorPoint.y);
+        self.layer.anchorPoint = anchor;
+            //CGPoint(x: anchor.x * self.frame.width, y: anchor.y * self.frame.height);
         self.transform = self.transform.rotated(by: radian);
+        self.transform = self.transform.translatedBy(x: anchorOffset.x * self.frame.width, y: anchorOffset.y * self.frame.height);
     }
     
     /**
