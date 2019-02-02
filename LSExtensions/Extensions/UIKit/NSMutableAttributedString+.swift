@@ -54,7 +54,15 @@ extension NSMutableAttributedString{
          - parameter string: String to make attributed string with
          - parameter color: Color to make attributed string with
      */
-    public convenience init(_ string : String, color: UIColor){
-        self.init(string: string, attributes: [.foregroundColor : color]);
-    }
+    /*public convenience init(_ string: String, font: UIFont!, foreground: UIColor? = nil, attributes: [NSAttributedString.Key : Any] = [:]){
+        var attributes = attributes;
+        if let font = font{
+            attributes[.font] = font;
+        }
+        if let foreground = foreground{
+            attributes[.foregroundColor] = foreground;
+        }
+        
+        self.init(string: string, attributes: attributes);
+    }*/
 }

@@ -15,7 +15,7 @@ extension UIApplication{
         - Requires: Property 'Itunes App Id' in Info.plist
         - Note: this property is used in openReview(_: , completion: )
      */
-    public var appId : String{
+    open var appId : String{
         get{
             guard let value = Bundle.main.infoDictionary?["Itunes App Id"] as? String else{
                 preconditionFailure("Add 'Itunes App Id' info Info.plist.");
@@ -74,7 +74,7 @@ extension UIApplication{
     /**
         Url for Itunes Link for this App
      */
-    public var urlForItunes : URL{
+    open var urlForItunes : URL{
         get{
             return URL(string :"https://itunes.apple.com/kr/app/myapp/id\(self.appId)?l=ko&mt=8")!;
         }

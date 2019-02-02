@@ -23,4 +23,18 @@ extension URL{
     public var isExist : Bool{
         return FileManager.default.fileExists(atPath: self.path);
     }
+    
+    /**
+        copies file located at this to given url
+        - parameter url: the url destination to copy this file
+        - parameter overwrite: indication whether to overwrite destination is already exist
+    */
+    public func copy(_ url: URL, overwrite : Bool) throws{
+        let mng = FileManager.default;
+        if overwrite, mng.fileExists(atPath: url.path){
+            try mng.removeItem(at: url);
+        }
+        
+        try mng.copyItem(at: self, to: url);
+    }
 }

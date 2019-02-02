@@ -10,7 +10,7 @@ import UIKit
 
 extension String {
     /**
-     Indicates whether this have any value(= not empty)
+         Indicates whether this have any value(= not empty)
     */
     public var any : Bool{
         get{
@@ -427,6 +427,13 @@ extension String {
     */
     public func ifEmpty(_ value : String) -> String{
         return self.isEmpty ? value : self;
+    }
+    
+    /**
+         
+     */
+    public func attributed(font: UIFont! = nil, color: UIColor? = nil, attributes: [NSAttributedString.Key : Any] = [:]) -> NSMutableAttributedString{
+        return NSMutableAttributedString(self, font: font, foreground: color, attributes: attributes);
     }
 }
 

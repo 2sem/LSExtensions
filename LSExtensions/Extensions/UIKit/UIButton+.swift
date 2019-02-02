@@ -10,6 +10,36 @@ import UIKit
 
 extension UIButton{
     /**
+     property to control templated image for the selected status of this button
+     */
+    @IBInspectable
+    open var templatedSelectedImage : UIImage?{
+        get{
+            return self.image(for: .selected);
+        }
+        
+        set(value){
+            let image = value?.withRenderingMode(.alwaysTemplate);
+            self.setImage(image, for: .selected);
+        }
+    }
+    
+    /**
+     property to control templated image for the normal status of this button
+     */
+    @IBInspectable
+    open var templatedImage : UIImage?{
+        get{
+            return self.image(for: .normal);
+        }
+        
+        set(value){
+            let image = value?.withRenderingMode(.alwaysTemplate);
+            self.setImage(image, for: .normal);
+        }
+    }
+    
+    /**
         Fit image of this button as aspec scale
     */
     public var imageAspectFit : Bool{
@@ -19,7 +49,7 @@ extension UIButton{
                 return value;
             }
             
-            value = self.imageView!.contentMode == .scaleAspectFit;
+            value = self.imageView?.contentMode == .scaleAspectFit;
             return value;
         }
         set(value){
