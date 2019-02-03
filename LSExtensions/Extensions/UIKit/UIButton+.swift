@@ -101,6 +101,22 @@ extension UIButton{
     }
     
     /**
+         set attributed title with the plain title of this
+         - parameter for: button state to set attibuted title
+     */
+    open func makeTitleAttributed(for state: UIControlState = .normal){
+        guard let normalText = self.title(for: state) else{
+            return;
+        }
+        
+        guard let font = self.titleLabel?.font else{
+            return;
+        }
+        
+        self.setAttributedTitle(normalText.attributed(font: font), for: state);
+    }
+    
+    /**
         Returns new button created with the properties of this
     */
     public func clone() -> UIButton{

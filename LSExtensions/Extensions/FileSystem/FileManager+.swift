@@ -12,7 +12,7 @@ extension FileManager{
     /**
         Short cut for FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     */
-    public static var documents: [URL]{
+    open static var documents: [URL]{
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask);
     }
 }

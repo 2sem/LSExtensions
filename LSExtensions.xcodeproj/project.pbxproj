@@ -69,6 +69,7 @@
 		2CA5B432208A1F5F008DE954 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B431208A1F5F008DE954 /* String+.swift */; };
 		2CA5B434208A24D3008DE954 /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B433208A24D3008DE954 /* Character+.swift */; };
 		2CA5B436208A24F3008DE954 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B435208A24F2008DE954 /* Array+.swift */; };
+		2CDE50F32205F32600F437D6 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE50F22205F32600F437D6 /* UINavigationController+.swift */; };
 		2CE26997208B279200DB03E4 /* Locale+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26996208B279200DB03E4 /* Locale+.swift */; };
 		2CE2699D208B343F00DB03E4 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2699C208B343F00DB03E4 /* UIViewController+.swift */; };
 		2CE2699F208B344600DB03E4 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2699E208B344600DB03E4 /* NSNotification+.swift */; };
@@ -150,6 +151,7 @@
 		2CA5B431208A1F5F008DE954 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2CA5B433208A24D3008DE954 /* Character+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+.swift"; sourceTree = "<group>"; };
 		2CA5B435208A24F2008DE954 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		2CDE50F22205F32600F437D6 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		2CE26996208B279200DB03E4 /* Locale+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+.swift"; sourceTree = "<group>"; };
 		2CE2699A208B33D400DB03E4 /* LSExtensions.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LSExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2CE2699C208B343F00DB03E4 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				2C179ED021591B7600102B89 /* UIColor+.swift */,
 				2C179ED22159243C00102B89 /* UILabel+.swift */,
 				2C122A2C2169BC070051CEF9 /* UIWebView+.swift */,
+				2CDE50F22205F32600F437D6 /* UINavigationController+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				2C122A312169BEA20051CEF9 /* URLRequest+.swift in Sources */,
 				2C1316B92102C51F0067D75A /* AVAudioSession+.swift in Sources */,
 				2C1316C72102C9540067D75A /* URL+.swift in Sources */,
+				2CDE50F32205F32600F437D6 /* UINavigationController+.swift in Sources */,
 				2C1316AE2102C14E0067D75A /* Double+.swift in Sources */,
 				2C12F5CA208D67D800B6D2D9 /* DispatchQueue+.swift in Sources */,
 				2C151E472205473B0088A0DD /* NSAttributedString+.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreTelephony
 
 extension UIApplication{
     /**
@@ -51,6 +52,15 @@ extension UIApplication{
             
             return value ?? "";
         }
+    }
+    
+    /**
+        carrier info of this device
+    */
+    public var carrier : CTCarrier?{
+        let tel = CTTelephonyNetworkInfo();
+        
+        return tel.subscriberCellularProvider;
     }
     
     /**

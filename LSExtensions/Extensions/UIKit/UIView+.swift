@@ -323,4 +323,36 @@ extension UIView{
         
         return parent is T ? parent as? T : parent?.parent(type: T.self);
     }
+    
+    /**
+         returns first subview matched gived type
+         - parameter type: type of subviews to find
+     */
+    public func first<T : UIView>(type: T.Type) -> T?{
+        var value : T? = self.subviews.compactMap{ $0 as? T }.first;
+        guard value == nil else{
+            return value;
+        }
+        
+        value = self.subviews.compactMap{ $0.first(type: type) }.first;
+        return value;
+    }
+    
+    /**
+         returns subviews matched given type
+         - parameter type: type of subview to find
+     */
+    public func children<T : UIView>(type: T.Type) -> [T]{
+        
+        return self.subviews.flatMap({ (view) -> [T] in
+            var values : [T] = [];
+            if let value = view as? T{
+                values.append(value);
+            }else{
+                values.append(contentsOf: view.children(type: type));
+            }
+            
+            return values;
+        })
+    }
 }
