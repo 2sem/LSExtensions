@@ -15,4 +15,17 @@ extension FileManager{
     open static var documents: [URL]{
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask);
     }
+    
+    /**
+        Copies target file to destination url
+    */
+    func copyItem(at: URL, to: URL, overwrite : Bool) throws{
+        if overwrite{
+            if self.fileExists(atPath: to.path){
+                try self.removeItem(at: to);
+            }
+        }
+        
+        try self.copyItem(at: at, to: to);
+    }
 }

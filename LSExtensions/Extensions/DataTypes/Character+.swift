@@ -193,8 +193,8 @@ extension Character {
     }
     
     /**
-     Returns the character advanced by given number
-     - returns: The character advanced by given number
+         Returns the character advanced by given number
+         - returns: The character advanced by given number
     */
     public func increase(_ num : UInt32) -> Character{
         let chrValue = UInt32(String(self).unicodeScalars.first!.value + num);

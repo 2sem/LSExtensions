@@ -14,7 +14,7 @@ import SafariServices
 
 extension UIViewController {
     /**
-     Window presenting this
+         Window presenting this
     */
     public var window : UIWindow?{
         get{
@@ -23,7 +23,7 @@ extension UIViewController {
     }
     
     /**
-     Root UIViewController presenting this
+         Root UIViewController presenting this
     */
     public var rootViewController: UIViewController?{
         guard let parent = self.parent else{
@@ -34,7 +34,7 @@ extension UIViewController {
     }
     
     /**
-     Top UIViewController of this if this is container view controller
+         Top UIViewController of this if this is container view controller
          - requires: this should be UINavigationContoller/UITabBarController/UIAlertController
     */
     public var mostTopViewController : UIViewController?{
@@ -442,6 +442,20 @@ extension UIViewController {
     public func openWithSafari(_ url: URL, animated: Bool = true){
         let webView = SFSafariViewController(url: url);
         self.present(webView, animated: animated, completion: nil);
+    }
+    
+    /**
+         identifiers for segues linked to this view controller
+     */
+    public var segueIdentifiers : [String]{
+        return (self.value(forKey: "storyboardSegueTemplates") as? [AnyObject] ?? []).compactMap{ $0.value(forKey: "identifier") as? String };
+    }
+    
+    /**
+         checks whether this view controller has specified segue by segue identifier
+     */
+    public func hasSegue(_ identifier : String) -> Bool{
+        return self.segueIdentifiers.contains(identifier);
     }
 }
 

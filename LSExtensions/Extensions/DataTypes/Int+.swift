@@ -184,3 +184,15 @@ extension Int16{
         return Int(self).upperAlpha;
     }
 }
+
+extension Int64{
+    /**
+     String from this by formatted with comma
+     */
+    public var stringByComma : String{
+        let formatter = NumberFormatter();
+        formatter.numberStyle = NumberFormatter.Style.decimal;
+
+        return formatter.string(from: NSNumber(value: self)) ?? "";
+    }
+}

@@ -150,6 +150,21 @@ extension Date {
     }
     
     /**
+         Hour of this date
+     */
+    public var hour: Int{
+        get{
+            return Calendar.current.dateComponents([.hour], from: self).hour ?? 0;
+        }
+        
+        mutating set(value){
+            var components = Calendar.current.dateComponents(in: Calendar.current.timeZone, from: self);
+            components.hour = value;
+            self = Calendar.current.date(from: components)!;
+        }
+    }
+    
+    /**
         Makes zero hour date with this date
     */
     public var zeroDate : Date{
