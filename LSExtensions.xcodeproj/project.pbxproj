@@ -77,6 +77,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2C2207BA2286C5CF00DE2544 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C2207B62286C5CE00DE2544 /* GADManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C22079F2286A0C700DE2544;
+			remoteInfo = GADManager;
+		};
 		2C75E7B32087892C00F1EFE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C75E79F2087892B00F1EFE2 /* Project object */;
@@ -141,6 +148,7 @@
 		2C1B94A0211536C80082F5AC /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		2C1DF05122369D7200F39945 /* UISearchBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+.swift"; sourceTree = "<group>"; };
 		2C2042112093497000132E57 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
+		2C2207B62286C5CE00DE2544 /* GADManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GADManager.xcodeproj; path = ../../../GADManager/src/GADManager/GADManager.xcodeproj; sourceTree = "<group>"; };
 		2C75E7A82087892B00F1EFE2 /* LSExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LSExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C75E7AB2087892B00F1EFE2 /* LSExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSExtensions.h; sourceTree = "<group>"; };
 		2C75E7AC2087892B00F1EFE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -298,9 +306,18 @@
 			path = DataTypes;
 			sourceTree = "<group>";
 		};
+		2C2207B72286C5CE00DE2544 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C2207BB2286C5CF00DE2544 /* GADManager.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2C75E79E2087892B00F1EFE2 = {
 			isa = PBXGroup;
 			children = (
+				2C2207B62286C5CE00DE2544 /* GADManager.xcodeproj */,
 				2CE2699A208B33D400DB03E4 /* LSExtensions.podspec */,
 				2C75E7AA2087892B00F1EFE2 /* LSExtensions */,
 				2C75E7B52087892C00F1EFE2 /* LSExtensionsTests */,
@@ -480,6 +497,12 @@
 			mainGroup = 2C75E79E2087892B00F1EFE2;
 			productRefGroup = 2C75E7A92087892B00F1EFE2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2C2207B72286C5CE00DE2544 /* Products */;
+					ProjectRef = 2C2207B62286C5CE00DE2544 /* GADManager.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2C75E7A72087892B00F1EFE2 /* LSExtensions */,
@@ -487,6 +510,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2C2207BB2286C5CF00DE2544 /* GADManager.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GADManager.framework;
+			remoteRef = 2C2207BA2286C5CF00DE2544 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2C75E7A62087892B00F1EFE2 /* Resources */ = {
