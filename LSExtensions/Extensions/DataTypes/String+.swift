@@ -137,7 +137,7 @@ extension String {
                 }
                 break;
             case "ㅈ":
-                if targetChoseong == "ㅉ"{
+                if targetChoseong == "ㅈ"{
                     value = "ㅉ";
                 }
             break;
