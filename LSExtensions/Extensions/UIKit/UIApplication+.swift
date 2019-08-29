@@ -55,6 +55,38 @@ extension UIApplication{
     }
     
     /**
+        return determine whether current application's version is less than given version or equal to it
+        - parameter version: version string to compare with version of current application
+        - parameter same: whether to return true if given verion string is equal to current application version
+        - Returns: whether current application's version is less than given version or equal to it
+     */
+    public func isVersion(lessThan version: String, orSame same: Bool = false) -> Bool{
+        let value = self.version.compare(version, options: .numeric);
+        var candidates : [ComparisonResult] = [.orderedAscending];
+        if same{
+            candidates.append(.orderedSame);
+        }
+        
+        return candidates.contains(value);
+    }
+    
+    /**
+        return determine whether current application's version is larger than given version or equal to it
+        - parameter version: version string to compare with version of current application
+        - parameter same: whether to return true if given verion string is equal to current application version
+        - Returns: whether current application's version is larger than given version or equal to it
+     */
+    public func isVersion(largerThan version: String, orSame same: Bool = false) -> Bool{
+        let value = self.version.compare(version, options: .numeric);
+        var candidates : [ComparisonResult] = [.orderedDescending];
+        if same{
+            candidates.append(.orderedSame);
+        }
+        
+        return candidates.contains(value);
+    }
+    
+    /**
         carrier info of this device
     */
     public var carrier : CTCarrier?{
