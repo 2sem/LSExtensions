@@ -12,28 +12,32 @@ extension UISearchBar{
     /**
         gets UITextField contained in this UISearchBar
     */
-    /*public var searchTextField : UITextField?{
+    public var textField : UITextField?{
         get{
-            return self.children(type: UITextField.self).first;
+            if #available(iOS 13, *){
+                return self.searchTextField;
+            }else{
+                return self.children(type: UITextField.self).first;
+            }
         }
-    }*/
+    }
     
     /**
          gets UIImageView contained in UITextField of this UISearchBar
      */
     public var searchTextFieldBackground : UIImageView?{
         get{
-            return self.searchTextField.children(type: UIImageView.self).first;
+            return self.textField?.children(type: UIImageView.self).first;
         }
     }
     
     @IBInspectable
     public var textColor : UIColor?{
         get{
-            return self.searchTextField.textColor;
+            return self.textField?.textColor;
         }
         set(value){
-            self.searchTextField.textColor = value;
+            self.textField?.textColor = value;
         }
     }
     
@@ -41,17 +45,17 @@ extension UISearchBar{
     public var placeHolderColor : UIColor?{
         get{
             var value : UIColor? = .gray;
-            guard self.searchTextField.attributedPlaceholder != nil else{
+            guard self.textField?.attributedPlaceholder != nil else{
                 return value;
             }
             
             var range = NSRange.init(location: 0, length: 1);
-            value = self.searchTextField.attributedPlaceholder?.attribute(NSAttributedStringKey.foregroundColor, at: 0, effectiveRange: &range) as? UIColor;
+            value = self.textField?.attributedPlaceholder?.attribute(NSAttributedStringKey.foregroundColor, at: 0, effectiveRange: &range) as? UIColor;
             
             return value;
         }
         set(value){
-            self.searchTextField.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: value ?? UIColor.lightText]);
+            self.textField?.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: value ?? UIColor.lightText]);
         }
     }
 }
