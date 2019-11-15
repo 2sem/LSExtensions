@@ -59,10 +59,8 @@ extension NSAttributedString{
         - parameter lineSpacing: the line space to resize attributed string with
      */
     open func scale(_ scale: CGFloat, lineSpacing: CGFloat? = nil) -> NSMutableAttributedString?{
-        guard let styledText = self as? NSMutableAttributedString else{
-            return self as? NSMutableAttributedString;
-        }
-        
+        let styledText = self as? NSMutableAttributedString ?? NSMutableAttributedString.init(attributedString: self)
+        //print("styledText - \(styledText)");
         styledText.enumerateAttribute(.font, in: NSMakeRange(0, styledText.length), options: .longestEffectiveRangeNotRequired) { (value, range, canContinue) in
             if let font = value as? UIFont{
                 let newFont = font.withSize(font.pointSize * scale);
