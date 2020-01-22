@@ -42,6 +42,6 @@ extension URLRequest{
          Sets paramters for the POST Method
      */
     public mutating func setPost(params: [String : String], encoding: String.Encoding = .utf8){
-        self.httpBody = params.map{ "\($0)=\($1)" }.joined(separator: "&").data(using: encoding);
+        self.httpBody = params.map{ "\($0)=\($1.replacingOccurrences(of: "&", with: "%26").replacingOccurrences(of: "+", with: "%2B").replacingOccurrences(of: "=", with: "%3D"))" }.joined(separator: "&").data(using: encoding);
     }
 }
