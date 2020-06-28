@@ -392,4 +392,19 @@ extension UIApplication{
             return value ?? "";
         }
     }
+    
+    /**
+        Whether this iOS version is fixed the bug that user can't touch navigation bar with search bar(UISearchController)
+     */
+    public var isHasSearchNavigationBarTouchBug: Bool {
+        if #available(iOS 13.2, *) {
+            return false
+        }else{
+            return true;
+        }
+//        if #available(iOS 13.0, *) {
+//            return true
+//        }
+        //return false
+    }
 }
