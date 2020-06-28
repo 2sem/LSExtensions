@@ -35,6 +35,10 @@ extension String {
         }
         
         //Check if specified lang equals to base lang
+        if bundlePath == nil{
+            bundlePath = Bundle.main.path(forResource: "Base", ofType: "lproj");
+        }
+        
         if bundlePath == nil && locale?.languageCode == "en"{
             bundlePath = Bundle.main.path(forResource: nil, ofType: "lproj");
         }
