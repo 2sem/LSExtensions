@@ -206,6 +206,30 @@ extension UIApplication{
     }
     
     /**
+        Open Page of specified User on Instagram App
+        - parameter id: Instagram Account
+        - parameter webOpen: Handler to open url
+    */
+    public func openInstagram(_ id : String, webOpen: ((URL) -> Void)? = nil){
+        var instagramUrl = URL(string: "instagram://user?username=\(id)")!;
+
+        if self.canOpenURL(instagramUrl){
+            self.openCompatible(instagramUrl, options: [:], completionHandler: nil);
+        }else{
+            instagramUrl = URL(string: "https://www.instagram.com/\(id)")!;
+            if webOpen != nil{
+                webOpen!(instagramUrl);
+            }else{
+                self.openCompatible(instagramUrl, options: [:], completionHandler: nil);
+            }
+        }
+        
+        /*FBSDKGraphRequest(graphPath: "\(id)", parameters: ["fields" : "id, name, first_name"]).start { (conn, res, error) in
+            print("facebook request. conn[\(conn)] data[\(res)] error[\(error)]")
+        }*/
+    }
+    
+    /**
          Open Page Kakao Story//of specified User on Twitter App
          - parameter id: Kakao Story Account Name
          - parameter webOpen: Handler to open url
