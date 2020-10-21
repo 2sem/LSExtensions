@@ -235,7 +235,7 @@ import CoreTelephony
          - parameter webOpen: Handler to open url
      */
     public func openKakaoStory(_ id : String, webOpen: ((URL) -> Void)? = nil){
-        var storyUrl = URL(string: "https://story.kaka.com/\(id)")!;
+        let storyUrl = URL(string: "https://story.kaka.com/\(id)")!;
         if self.canOpenURL(storyUrl){
             self.openCompatible(storyUrl, options: [:], completionHandler: nil);
         }else{
@@ -255,7 +255,7 @@ import CoreTelephony
          - parameter webOpen: Handler to open url
      */
     public func openKakaoPlus(_ id : String, webOpen: ((URL) -> Void)? = nil){
-        var storyUrl = URL(string: "https://pf.kaka.com/\(id)")!;
+        let storyUrl = URL(string: "https://pf.kaka.com/\(id)")!;
         if self.canOpenURL(storyUrl){
             self.openCompatible(storyUrl, options: [:], completionHandler: nil);
         }else{

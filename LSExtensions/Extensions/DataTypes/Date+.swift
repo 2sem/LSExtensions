@@ -42,8 +42,8 @@ extension Date {
         var value = true;
         let calendar = Calendar.current;
         
-        var dateComponents = calendar.dateComponents(components, from: date);
-        var targetComponents = calendar.dateComponents(components, from: self);
+        let dateComponents = calendar.dateComponents(components, from: date);
+        let targetComponents = calendar.dateComponents(components, from: self);
         for component in components{
             switch component{
             case .calendar:

@@ -28,7 +28,7 @@ extension URLRequest{
     public func getPost(encoding: String.Encoding = .utf8) -> [String : String]{
         return (String.init(data: self.httpBody ?? Data(), encoding: .utf8)?
             .components(separatedBy: "&").reduce(into: [String : String](), { (dict, param) in
-                var keyvalue = param.components(separatedBy: "=");
+                let keyvalue = param.components(separatedBy: "=");
                 
                 guard keyvalue.count > 1 else{
                     return;

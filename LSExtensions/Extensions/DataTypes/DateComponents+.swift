@@ -151,7 +151,7 @@ extension DateComponents{
         get{
             var value = "";
             
-            var date = self;
+            let date = self;
             let hour = date.hour! > 12 ? date.hour! - 12 : date.hour!;
     
             value.append(" \(date.hour == nil ? "매시" : (date.hour! >= 12 ? "오후" : "오전") + " \(hour)시" )");

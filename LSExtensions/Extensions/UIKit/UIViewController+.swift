@@ -44,7 +44,7 @@ extension UIViewController {
                 value = nav.visibleViewController;
             }else if let tab = self as? UITabBarController{
                 value = tab.selectedViewController;
-            }else if let modal = self.presentedViewController as? UIViewController{
+            }else if let modal = self.presentedViewController{
                 if modal is UIAlertController{
                     //ignore UIAlertController, so it consider as end view controller
                 }else{
