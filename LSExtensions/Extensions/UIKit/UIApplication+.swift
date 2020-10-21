@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreTelephony
 
-extension UIApplication{
+@objc extension UIApplication{
     /**
         Value of property nameed of 'Itunes App Id' in Info.plist
         - Requires: Property 'Itunes App Id' in Info.plist
@@ -136,7 +136,7 @@ extension UIApplication{
     /**
         Open AppStore for this App
     */
-    public func openItunes(){
+    @objc public func openItunes(){
         self.openCompatible(self.urlForItunes, options: [:], completionHandler: nil) ;
     }
     
