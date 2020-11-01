@@ -69,6 +69,7 @@
 		2CA5B432208A1F5F008DE954 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B431208A1F5F008DE954 /* String+.swift */; };
 		2CA5B434208A24D3008DE954 /* Character+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B433208A24D3008DE954 /* Character+.swift */; };
 		2CA5B436208A24F3008DE954 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5B435208A24F2008DE954 /* Array+.swift */; };
+		2CB15DA62543C1A7000D296F /* ArraySlice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB15DA52543C1A7000D296F /* ArraySlice+.swift */; };
 		2CDE50F32205F32600F437D6 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE50F22205F32600F437D6 /* UINavigationController+.swift */; };
 		2CE26997208B279200DB03E4 /* Locale+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE26996208B279200DB03E4 /* Locale+.swift */; };
 		2CE2699D208B343F00DB03E4 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE2699C208B343F00DB03E4 /* UIViewController+.swift */; };
@@ -151,6 +152,7 @@
 		2CA5B431208A1F5F008DE954 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2CA5B433208A24D3008DE954 /* Character+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+.swift"; sourceTree = "<group>"; };
 		2CA5B435208A24F2008DE954 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		2CB15DA52543C1A7000D296F /* ArraySlice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArraySlice+.swift"; sourceTree = "<group>"; };
 		2CDE50F22205F32600F437D6 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		2CE26996208B279200DB03E4 /* Locale+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+.swift"; sourceTree = "<group>"; };
 		2CE2699A208B33D400DB03E4 /* LSExtensions.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LSExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -287,6 +289,7 @@
 				2CA5B42F2089DF8A008DE954 /* Int+.swift */,
 				2CA5B433208A24D3008DE954 /* Character+.swift */,
 				2CA5B435208A24F2008DE954 /* Array+.swift */,
+				2CB15DA52543C1A7000D296F /* ArraySlice+.swift */,
 				2C12F5CB208D6B6200B6D2D9 /* Data+.swift */,
 				2C14C55020983EB200D3C5A4 /* NSError+.swift */,
 				2C14C081210C113200694D2C /* DateComponents+.swift */,
@@ -545,6 +548,7 @@
 				2CA5B4302089DF8B008DE954 /* Int+.swift in Sources */,
 				2C1316C02102C6820067D75A /* UIAlertAction+.swift in Sources */,
 				2C12A81121FA01B700ED5605 /* NSFetchedResultsController+.swift in Sources */,
+				2CB15DA62543C1A7000D296F /* ArraySlice+.swift in Sources */,
 				2C1316DD2102DF180067D75A /* UIScrollView+.swift in Sources */,
 				2C12F5C5208D663100B6D2D9 /* UIView+.swift in Sources */,
 				2C1316CA2102CF230067D75A /* CATransition+.swift in Sources */,
@@ -717,6 +721,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -730,7 +735,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.16;
+				MARKETING_VERSION = 0.1.17;
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.LSExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -746,6 +751,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M29A6H95KD;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -759,7 +765,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.16;
+				MARKETING_VERSION = 0.1.17;
 				PRODUCT_BUNDLE_IDENTIFIER = com.y2k.LSExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
