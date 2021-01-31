@@ -122,4 +122,56 @@ extension Array{
         
         return values;
     }
+    
+    /**
+         Returns new array except duplicated elements
+         - Parameter comparer: Handler to check if the two elements are same -- useless
+         - parameter left : first element to be compared
+         - parameter right : second element to be compared
+     */
+    public func distinct(_ comparer: ((_ left : Element, _ right : Element) -> Bool)? = nil) -> [Element]{
+        return self.reduce(into: [Element](), { (result, element) in
+            if let comparer = comparer{
+                let isContain = result.contains(where: { comparer(element, $0) });
+                guard !isContain else{
+                    return;
+                }
+            }else{
+                guard !result.contains(element) else{
+                    return;
+                }
+            }
+            result.append(element);
+        });
+    }
+    
+    /// Splits Array into sub arrays with given size and range
+    /// - Parameters:
+    ///   - from: Start position to slice this array
+    ///   - to: End position to slice this array
+    ///   - size: Size of sub array
+    /// - Returns: Sub arrays sliced with given size
+    public func sliced(from: Index = 0, to: Index? = nil, size: Int) -> [[Element]] {
+        return self.isEmpty ? [] : stride(from: from, to: to ?? self.endIndex, by: size).map {
+            Array(self[$0 ... Swift.min($0.advanced(by: size), self.endIndex.advanced(by: -1))])
+        };
+    }
+    
+    /// Access element of array without crashing by out of bound
+    /// - Parameter safe: Index to access element
+    public subscript(safe index: Int) -> Element?{
+        guard index >= 0 && index < self.count else{
+            return nil;
+        }
+        
+        return self[index];
+    }
+    
+    /// fill all elements of array with given value
+    /// - Parameter value: value to fill this array
+    public mutating func fill(_ value: Element){
+        self.enumerated().forEach { (element) in
+            self[element.offset] = value;
+        }
+    }
 }
