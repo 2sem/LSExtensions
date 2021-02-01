@@ -50,9 +50,9 @@ extension Int{
          - Note: value start from 1('a' == 1)
     */
     public init(alpha: String) {
-        var value = (type(of: self).lowerAlphas.index(of: alpha) ?? -1);
+        var value = (type(of: self).lowerAlphas.firstIndex(of: alpha) ?? -1);
         if value < 0{
-            value = (type(of: self).upperAlphas.index(of: alpha) ?? -1);
+            value = (type(of: self).upperAlphas.firstIndex(of: alpha) ?? -1);
         }
         self = value + 1;
     }

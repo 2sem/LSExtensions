@@ -452,7 +452,7 @@ extension UIViewController {
     */
     @available(iOS 11.0, *)
     open func openWithSafari(_ url: URL, configuration: SFSafariViewController.Configuration? = nil, barCollapsingEnabled: Bool = true, animated: Bool = true){
-        var config = configuration ?? SFSafariViewController.Configuration();
+        let config = configuration ?? SFSafariViewController.Configuration();
         config.barCollapsingEnabled = barCollapsingEnabled;
         let webView = SFSafariViewController.init(url: url, configuration: config);
         

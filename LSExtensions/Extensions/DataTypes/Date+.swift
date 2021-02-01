@@ -107,6 +107,7 @@ extension Date {
                 value = dateComponents.nanosecond == targetComponents.nanosecond;
             case .timeZone:
                 value = dateComponents.timeZone == targetComponents.timeZone;
+            default: break;
             }
             
             if !value{

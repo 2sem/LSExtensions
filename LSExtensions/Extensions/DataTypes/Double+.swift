@@ -14,7 +14,7 @@ extension Double{
          Returns string with the date generated this value as Seconds
          - Parameters:
              - format: String format to print date as String
-             - locale: Locale to use date formmating
+             - locale: Locale to use date formatting
      */
     public func dateString(_ format : String = "HH:mm:ss", locale: Locale) -> String{
         var value = "";
@@ -39,10 +39,10 @@ extension Double{
      */
     public func dateString(_ format : String = "HH:mm:ss", withoutZeroHour : Bool = false, formatForZeroHour : String = "mm:ss") -> String{
         guard self >= 60 * 60 else{
-            return self.dateString(formatForZeroHour);
+            return self.dateString(formatForZeroHour, locale: Locale.current);
         }
         
-        return self.dateString(format);
+        return self.dateString(format, locale: Locale.current);
     }
     
     /**

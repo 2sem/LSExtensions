@@ -36,41 +36,6 @@ extension CMTime {
     }
     
     /**
-        Wrapper for kCMTimeInvalid
-    */
-    public static var invalid : CMTime{
-        return CMTime.invalid
-    }
-    
-    /**
-        Wrapper for kCMTimeZero
-    */
-    public static var zero : CMTime{
-        return CMTime.zero
-    }
-    
-    /**
-        Wrapper for kCMTimeIndefinite
-    */
-    public static var indefinite : CMTime{
-        return CMTime.indefinite
-    }
-    
-    /**
-        Wrapper for kCMTimeNegativeInfinity
-    */
-    public static var negativeInfinity : CMTime{
-        return CMTime.negativeInfinity
-    }
-    
-    /**
-        Wrapper for kCMTimePositiveInfinity
-    */
-    public static var positiveInfinity : CMTime{
-        return CMTime.positiveInfinity
-    }
-    
-    /**
         Seconds converted from this time
     */
     /*public var seconds : Double{
