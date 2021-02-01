@@ -94,7 +94,7 @@ extension DateComponents{
         get{
             var value : DateWeekDay?;
             
-            if self.weekDay != nil{
+            if self.weekday != nil{
                 value = DateWeekDay.allWeekDays[self.weekday! - 1];
             }
             return value;
