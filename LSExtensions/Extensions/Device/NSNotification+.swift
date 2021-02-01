@@ -23,15 +23,6 @@ extension NSNotification{
     }
     
     /**
-         End Frame of Keyboard - UIKeyboardFrameEndUserInfoKey
-     */
-    public var endKeyboardFrame : CGRect{
-        let value = (self.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect.zero;
-        
-        return value;
-    }
-    
-    /**
      Duration of Animation to appear Keyboard
     */
     public var keyboardAniDuration : TimeInterval{

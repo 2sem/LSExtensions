@@ -73,7 +73,6 @@
 		2CAF07DB25C6F962009A013C /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF07DA25C6F962009A013C /* UIFont+.swift */; };
 		2CB03B8A25C7E7B800E78363 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB03B8925C7E7B800E78363 /* UIImage+.swift */; };
 		2CB03B8F25C7ED8100E78363 /* CIFilter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB03B8E25C7ED8100E78363 /* CIFilter+.swift */; };
-		2CB03B9525C7F28C00E78363 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB03B9425C7F28C00E78363 /* NSNotification+.swift */; };
 		2CB03B9925C7F2BB00E78363 /* Decodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB03B9825C7F2BB00E78363 /* Decodable+.swift */; };
 		2CB03C2525C7F82500E78363 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB03C2425C7F82500E78363 /* UITextView+.swift */; };
 		2CB03C2925C7F8C300E78363 /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB03C2825C7F8C300E78363 /* Bool+.swift */; };
@@ -165,7 +164,6 @@
 		2CAF07DA25C6F962009A013C /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2CB03B8925C7E7B800E78363 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		2CB03B8E25C7ED8100E78363 /* CIFilter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIFilter+.swift"; sourceTree = "<group>"; };
-		2CB03B9425C7F28C00E78363 /* NSNotification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+.swift"; sourceTree = "<group>"; };
 		2CB03B9825C7F2BB00E78363 /* Decodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+.swift"; sourceTree = "<group>"; };
 		2CB03C2425C7F82500E78363 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		2CB03C2825C7F8C300E78363 /* Bool+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+.swift"; sourceTree = "<group>"; };
@@ -430,7 +428,6 @@
 				2CDE50F22205F32600F437D6 /* UINavigationController+.swift */,
 				2C1DF05122369D7200F39945 /* UISearchBar+.swift */,
 				2CAF07DA25C6F962009A013C /* UIFont+.swift */,
-				2CB03B9425C7F28C00E78363 /* NSNotification+.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -548,7 +545,6 @@
 				2C179ED32159243C00102B89 /* UILabel+.swift in Sources */,
 				2C1B949F211536300082F5AC /* NSMutableAttributedString+.swift in Sources */,
 				2C10590B2090A2CC0064E933 /* Notification+.swift in Sources */,
-				2CB03B9525C7F28C00E78363 /* NSNotification+.swift in Sources */,
 				2CE2699D208B343F00DB03E4 /* UIViewController+.swift in Sources */,
 				2C1316B12102C2600067D75A /* AVPlayerItem+.swift in Sources */,
 				2C1316C32102C7040067D75A /* FileManager+.swift in Sources */,
