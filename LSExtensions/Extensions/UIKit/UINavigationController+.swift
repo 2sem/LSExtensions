@@ -14,7 +14,7 @@ extension UINavigationController{
      */
     open func pop(viewController: UIViewController, animated: Bool = false){
         var views = self.viewControllers;
-        guard let index = views.index(of: viewController) else{
+        guard let index = views.firstIndex(of: viewController) else{
             return;
         }
         views.remove(at: index);

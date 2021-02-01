@@ -21,7 +21,7 @@ extension Notification{
     }
     
     /**
-        End Frame of Keyboard - UIKeyboardFrameEndUserInfoKey
+        End Frame of Keyboard - UIResponder.keyboardFrameEndUserInfoKey
     */
     public var endKeyboardFrame : CGRect{
         let value = (self.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect.zero;

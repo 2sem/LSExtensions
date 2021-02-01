@@ -69,7 +69,7 @@ extension DateComponents{
                         return day.string;
                     }).joined(separator: ",");
                 }else if let day = self.days.first{
-                    value = DateWeekDay.strings[DateWeekDay.allWeekDays.index(of: day) ?? 0];
+                    value = DateWeekDay.strings[DateWeekDay.allWeekDays.firstIndex(of: day) ?? 0];
                 }
                 
                 //return DateWeekDay.strings[DateWeekDay.allWeekDays.index(of: self) ?? 0];
@@ -82,7 +82,7 @@ extension DateComponents{
         */
         public var weekday : Int{
             get{
-                return (DateWeekDay.allWeekDays.index(of: self) ?? 0) + 1;
+                return (DateWeekDay.allWeekDays.firstIndex(of: self) ?? 0) + 1;
             }
         }
     }
@@ -104,7 +104,7 @@ extension DateComponents{
             if value == nil{
                 self.weekday = nil;
             }else{
-                self.weekday = (DateWeekDay.allWeekDays.index(of: value!) ?? 0) + 1;
+                self.weekday = (DateWeekDay.allWeekDays.firstIndex(of: value!) ?? 0) + 1;
             }
         }
     }
