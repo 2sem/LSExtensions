@@ -11,9 +11,9 @@ import Foundation
 extension Int{
     
     static let romans : [String] = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
-    static let lowerAlphas : [String] = (UnicodeScalar("a")!.value...UnicodeScalar("z")!.value)
+    static let lowerAlphas : [String] = (UnicodeScalar("a").value...UnicodeScalar("z").value)
         .compactMap { String(UnicodeScalar($0)!) };
-    static let upperAlphas : [String] = (UnicodeScalar("A")!.value...UnicodeScalar("Z")!.value)
+    static let upperAlphas : [String] = (UnicodeScalar("A").value...UnicodeScalar("Z").value)
         .compactMap { String(UnicodeScalar($0)!) };
         /*["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
                              "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];*/

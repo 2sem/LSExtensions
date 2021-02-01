@@ -125,7 +125,7 @@ import CoreTelephony
     /**
         os compatible for function to open url
     */
-    private func openCompatible(_ url: URL, options: [String : Any] = [:], completionHandler completion: ((Bool) -> Swift.Void)? = nil){
+    private func openCompatible(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Swift.Void)? = nil){
         if #available(iOS 10.0, *) {
             self.open(url, options: options, completionHandler: completion)
         } else {
@@ -158,7 +158,7 @@ import CoreTelephony
          - parameter completion: block to call after opening Settings App has been completed
     */
     public func openSettings(_ completion: ((Bool) -> Swift.Void)? = nil){
-        let url_settings = URL(string:UIApplicationOpenSettingsURLString);
+        let url_settings = URL(string:UIApplication.openSettingsURLString);
         self.openCompatible(url_settings!, options: [:], completionHandler: completion)
     }
     
@@ -393,14 +393,14 @@ import CoreTelephony
         Indication whether this application is on foreground
     */
     public var isForeground : Bool{
-        return [UIApplicationState.active].contains(UIApplication.shared.applicationState);
+        return [UIApplication.State.active].contains(UIApplication.shared.applicationState);
     }
     
     /**
         Indication whether this application is in background
      */
     public var isBackground : Bool{
-        return [UIApplicationState.inactive, UIApplicationState.background].contains(UIApplication.shared.applicationState);
+        return [UIApplication.State.inactive, UIApplication.State.background].contains(UIApplication.shared.applicationState);
     }
     
     /**
@@ -430,5 +430,15 @@ import CoreTelephony
 //            return true
 //        }
         //return false
+    }
+    
+    /// Increases app icon badge number
+    func increaseBadgeNumber(){
+        UIApplication.shared.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber.advanced(by: 1);
+    }
+    
+    /// Decrease app icon badge number
+    func decreaseBadgeNumber(){
+        UIApplication.shared.applicationIconBadgeNumber = max(UIApplication.shared.applicationIconBadgeNumber.advanced(by: -1), 0);
     }
 }

@@ -10,6 +10,65 @@ import Foundation
 import UIKit
 
 extension UIView{
+    /// Whether to be changed when the device is on dark mode or color inversed
+    @IBInspectable public var ignoresDarkMode: Bool {
+        get {
+            if #available(iOS 11.0, *) {
+                return self.accessibilityIgnoresInvertColors
+            }
+            return false
+        }
+        set(value) {
+            if #available(iOS 11.0, *) {
+                self.accessibilityIgnoresInvertColors = value;
+            }
+        }
+    }
+    
+    /// Accesor for identifier to use at UITest?
+    @IBInspectable public var uiTestIdentifier: String? {
+        get {
+            return self.accessibilityIdentifier;
+        }
+        set(value) {
+            self.accessibilityIdentifier = value;
+        }
+    }
+    
+    /// Get layout constraints for width of this(FirstAnchor is this and FirstAttribute is width)
+    open var widthConstraints : [NSLayoutConstraint]{
+        return self.constraints.filter { (constraint) -> Bool in
+            var value = false;
+            if #available(iOS 10.0, *) {
+                value = self.isEqual(constraint.firstItem)
+                    && constraint.firstAnchor == self.widthAnchor
+                    && constraint.firstAttribute == .width
+            } else {
+                value = self.isEqual(constraint.firstItem)
+                    && constraint.firstAttribute == .width
+            };
+
+            return value;
+        };
+    }
+    
+    /// get layout constraints for height
+    open var heightConstraints : [NSLayoutConstraint]{
+        return self.constraints.filter { (constraint) -> Bool in
+            var value = false;
+            if #available(iOS 10.0, *) {
+                value = self.isEqual(constraint.firstItem)
+                    && constraint.firstAnchor == self.heightAnchor
+                    && constraint.firstAttribute == .height
+            } else {
+                value = self.isEqual(constraint.firstItem)
+                    && constraint.firstAttribute == .height
+            };
+
+            return value;
+        };
+    }
+    
     /**
         Capture screenshot of this view with given scale
      - parameter scale: scale for screenshot
@@ -354,5 +413,237 @@ extension UIView{
             
             return values;
         })
+    }
+}
+
+// MARK: Borders
+extension UIView{
+    private struct BorderPropertyKeys{
+        static var left = "uiview.border.left";
+        static var right = "uiview.border.right";
+        static var top = "uiview.border.top";
+        static var bottom = "uiview.border.bottom";
+    }
+
+    private func _createNewBorderLineView() -> UIView{
+        let value = UIView();
+        value.translatesAutoresizingMaskIntoConstraints = false;
+        
+        self.addSubview(value);
+        return value;
+    }
+    
+    /**
+        Property to get/set width of left border
+        use color - borderColor : layer.borderColor;
+    */
+
+    @IBInspectable
+    public var borderLeftWidth : CGFloat{
+        get{
+            let borderLineView = self.objcProperty(&UIView.BorderPropertyKeys.left) as? UIView;
+            return borderLineView?.frame.width ?? 0.0;
+        }
+
+        set(value){
+            var borderLineView : UIView! = self.objcProperty(&UIView.BorderPropertyKeys.left) as? UIView;
+
+            if borderLineView == nil{
+                borderLineView = self._createNewBorderLineView();
+                
+                borderLineView?.widthAnchor.constraint(equalToConstant: value).isActive = true;
+                borderLineView?.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+                borderLineView?.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+                borderLineView?.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+                
+                self.setObjcProperty(&UIView.BorderPropertyKeys.left, value: borderLineView, policy: .OBJC_ASSOCIATION_RETAIN);
+                borderLineView = self.objcProperty(&UIView.BorderPropertyKeys.left) as? UIView;
+                //print("create new left border. line[\(borderLineView)]");
+            }
+
+            borderLineView.backgroundColor = self.borderUIColor;
+            borderLineView.widthConstraints.first?.constant = value;
+            self.bringSubviewToFront(borderLineView);
+            //borderLayer?.frame = CGRect.init(x: 0, y: 0, width: value, height: self.frame.height);
+        }
+    }
+    
+    
+    /**
+        Property to get/set width of right border
+        use color - borderColor : layer.borderColor;
+    */
+
+    @IBInspectable
+    public var borderRightWidth : CGFloat{
+        get{
+            let borderLineView = self.objcProperty(&UIView.BorderPropertyKeys.right) as? UIView;
+            return borderLineView?.frame.width ?? 0.0;
+        }
+
+        set(value){
+            var borderLineView : UIView! = self.objcProperty(&UIView.BorderPropertyKeys.right) as? UIView;
+
+            if borderLineView == nil{
+                borderLineView = self._createNewBorderLineView();
+                
+                borderLineView?.widthAnchor.constraint(equalToConstant: value).isActive = true;
+                borderLineView?.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+                borderLineView?.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+                borderLineView?.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+                
+                self.setObjcProperty(&UIView.BorderPropertyKeys.right, value: borderLineView, policy: .OBJC_ASSOCIATION_RETAIN);
+                borderLineView = self.objcProperty(&UIView.BorderPropertyKeys.right) as? UIView;
+                //print("create new left border. line[\(borderLineView)]");
+            }
+
+            borderLineView.backgroundColor = self.borderUIColor
+            borderLineView.widthConstraints.first?.constant = value;
+            self.bringSubviewToFront(borderLineView);
+            //borderLayer?.frame = CGRect.init(x: 0, y: 0, width: value, height: self.frame.height);
+        }
+    }
+    
+    /**
+        Property to get/set width of bottom border
+        use color - borderColor : layer.borderColor;
+    */
+
+    @IBInspectable
+    public var borderBottomWidth : CGFloat{
+        get{
+            let borderLineView = self.objcProperty(&UIView.BorderPropertyKeys.bottom) as? UIView;
+            return borderLineView?.frame.width ?? 0.0;
+        }
+
+        set(value){
+            var borderLineView : UIView! = self.objcProperty(&UIView.BorderPropertyKeys.bottom) as? UIView;
+
+            if borderLineView == nil{
+                borderLineView = self._createNewBorderLineView();
+                
+                borderLineView?.heightAnchor.constraint(equalToConstant: value).isActive = true;
+                borderLineView?.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+                borderLineView?.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+                borderLineView?.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+                
+                self.setObjcProperty(&UIView.BorderPropertyKeys.bottom, value: borderLineView, policy: .OBJC_ASSOCIATION_RETAIN);
+                borderLineView = self.objcProperty(&UIView.BorderPropertyKeys.bottom) as? UIView;
+                //print("create new left border. line[\(borderLineView)]");
+            }
+
+            borderLineView.backgroundColor = self.borderUIColor
+            borderLineView.widthConstraints.first?.constant = value;
+            self.bringSubviewToFront(borderLineView);
+            //borderLayer?.frame = CGRect.init(x: 0, y: 0, width: value, height: self.frame.height);
+        }
+    }
+    
+    /**
+        Property to get/set width of top border
+        use color - borderColor : layer.borderColor;
+    */
+
+   @IBInspectable
+   public var borderTopWidth : CGFloat{
+        get{
+            let borderLineView = self.objcProperty(&UIView.BorderPropertyKeys.top) as? UIView;
+            return borderLineView?.frame.width ?? 0.0;
+        }
+
+        set(value){
+            var borderLineView : UIView! = self.objcProperty(&UIView.BorderPropertyKeys.top) as? UIView;
+
+            if borderLineView == nil{
+                borderLineView = self._createNewBorderLineView();
+                
+                borderLineView?.heightAnchor.constraint(equalToConstant: value).isActive = true;
+                borderLineView?.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+                borderLineView?.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+                borderLineView?.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+                
+                self.setObjcProperty(&UIView.BorderPropertyKeys.top, value: borderLineView, policy: .OBJC_ASSOCIATION_RETAIN);
+                borderLineView = self.objcProperty(&UIView.BorderPropertyKeys.top) as? UIView;
+                //print("create new left border. line[\(borderLineView)]");
+            }
+
+             borderLineView.backgroundColor = self.borderUIColor
+            borderLineView.widthConstraints.first?.constant = value;
+            self.bringSubviewToFront(borderLineView);
+            //borderLayer?.frame = CGRect.init(x: 0, y: 0, width: value, height: self.frame.height);
+        }
+   }
+    
+    /**
+        bring all borders to front of this view
+     */
+    func bringBordersToFront(){
+        let borders : [UIView] = [self.objcProperty(&UIView.BorderPropertyKeys.left) as? UIView,
+                                  self.objcProperty(&UIView.BorderPropertyKeys.right) as? UIView,
+                                  self.objcProperty(&UIView.BorderPropertyKeys.top) as? UIView,
+                                self.objcProperty(&UIView.BorderPropertyKeys.bottom) as? UIView].compactMap{ $0 }
+        
+        borders.forEach{ self.bringSubviewToFront($0) }
+    }
+}
+
+// MARK: Shadow
+extension UIView{
+    @IBInspectable
+    open var shadowRadius : CGFloat{
+        get{
+            return self.layer.shadowRadius;
+        }
+        
+        set{
+            self.layer.shadowRadius = newValue;
+        }
+    }
+    
+    @IBInspectable
+    open var shadowOpacity : Float{
+        get{
+            return self.layer.shadowOpacity;
+        }
+        
+        set{
+            self.layer.shadowOpacity = newValue;
+        }
+    }
+    
+    @IBInspectable
+    open var shadowUIColor : UIColor!{
+        get{
+            guard let color = self.layer.shadowColor else{
+                return nil;
+            }
+            
+            return UIColor.init(cgColor: color);
+        }
+        
+        set{
+            self.layer.shadowColor = newValue?.cgColor;
+        }
+    }
+    
+    @IBInspectable
+    open var shadowOffset : CGSize{
+        get{
+            return self.layer.shadowOffset;
+        }
+        
+        set{
+            self.layer.shadowOffset = newValue;
+        }
+    }
+    
+    open var isVisible : Bool{
+        get{
+            return !self.isHidden;
+        }
+        
+        set{
+            self.isHidden = !newValue;
+        }
     }
 }

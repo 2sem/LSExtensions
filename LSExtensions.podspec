@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
   #
   s.name         = "LSExtensions"
-  s.version      = "0.1.16"
-  s.swift_version = "4.1"
+  s.version      = "0.1.17"
+  s.swift_version = "5"
   s.summary      = "Collection of Usable Extension."
 
   # This description is used to generate tags and improve search results.

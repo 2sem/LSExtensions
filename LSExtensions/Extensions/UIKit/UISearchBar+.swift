@@ -50,12 +50,12 @@ extension UISearchBar{
             }
             
             var range = NSRange.init(location: 0, length: 1);
-            value = self.textField?.attributedPlaceholder?.attribute(NSAttributedStringKey.foregroundColor, at: 0, effectiveRange: &range) as? UIColor;
+            value = self.textField?.attributedPlaceholder?.attribute(NSAttributedString.Key.foregroundColor, at: 0, effectiveRange: &range) as? UIColor;
             
             return value;
         }
         set(value){
-            self.textField?.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: value ?? UIColor.lightText]);
+            self.textField?.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: value ?? UIColor.lightText]);
         }
     }
 }

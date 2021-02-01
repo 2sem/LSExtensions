@@ -23,7 +23,7 @@ extension UITextField{
             }
             
             let text = self.placeholder ?? self.attributedPlaceholder?.string;
-            let attbText = NSAttributedString(string: text ?? "", attributes: [NSAttributedStringKey.foregroundColor : color]);
+            let attbText = NSAttributedString(string: text ?? "", attributes: [NSAttributedString.Key.foregroundColor : color]);
             self.attributedPlaceholder = attbText;
         }
     }

@@ -25,7 +25,7 @@ extension NSMutableAttributedString{
          - parameter string: String to make attributed string with
          - parameter color: Color to make attributed string with
      */
-    open func append(_ string: String, withAttributes attrs: [NSAttributedStringKey : Any]? = nil) -> NSMutableAttributedString{
+    open func append(_ string: String, withAttributes attrs: [NSAttributedString.Key : Any]? = nil) -> NSMutableAttributedString{
         self.append(NSMutableAttributedString.init(string: string, attributes: attrs));
         
         return self;

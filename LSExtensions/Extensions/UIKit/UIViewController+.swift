@@ -57,6 +57,26 @@ extension UIViewController {
         }
     }
     
+    /// Height of TabBar for this view controller
+    open var tabBarHeight : CGFloat{
+        return self.tabBarController?.tabBar.frame.height ?? 0;
+    }
+    
+    /** All segue identifiers assigned to this view controller.
+     To use in hasSegue
+    */
+    open var segueIdentifiers : [String]{
+        return (self.value(forKey: "storyboardSegueTemplates") as? [AnyObject] ?? []).compactMap{ $0.value(forKey: "identifier") as? String };
+    }
+    
+    
+    /** Returns whether given segue identifier is exist in this view controller
+     - Parameter identifier: Identifier of the segue to check if it is contained in this view controller
+    **/
+    open func hasSegue(_ identifier : String) -> Bool{
+        return self.segueIdentifiers.contains(identifier);
+    }
+    
     /**
         Presents Alert Controller generated with given information and returns it
          - parameter title: title of UIAlertController to present
@@ -70,7 +90,7 @@ extension UIViewController {
          - returns: Alert Controller generated with given information and returns it
     */
     @discardableResult
-    public func showAlert(title: String, msg: String, actions : [UIAlertAction], style: UIAlertControllerStyle, sourceView: UIView? = nil, sourceRect: CGRect? = nil, popoverDelegate: UIPopoverPresentationControllerDelegate? = nil, completion: (() -> Void)? = nil) -> UIAlertController{
+    public func showAlert(title: String, msg: String, actions : [UIAlertAction], style: UIAlertController.Style, sourceView: UIView? = nil, sourceRect: CGRect? = nil, popoverDelegate: UIPopoverPresentationControllerDelegate? = nil, completion: (() -> Void)? = nil) -> UIAlertController{
         let alert = UIAlertController(title: title, message: msg, preferredStyle: style);
         for act in actions{
             alert.addAction(act);
@@ -102,7 +122,7 @@ extension UIViewController {
     public func showIndicator(title: String?, msg: String = "\n\n\n", completion: (() -> Void)? = nil) -> UIAlertController{
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert);
         
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge);
+        let indicator = UIActivityIndicatorView(style: .whiteLarge);
         indicator.center = CGPoint(x: 130, y: 65);
         indicator.color = UIColor.black;
         indicator.startAnimating();
@@ -256,7 +276,7 @@ extension UIViewController {
          - returns: child UIViewController found out in this by given Type
     */
     public func childViewController<T : UIViewController>(type: T.Type) -> T?{
-        return self.childViewControllers.filter({ (view) -> Bool in
+        return self.children.filter({ (view) -> Bool in
             return view.isKind(of: type);
         }).first as? T;
     }
@@ -293,6 +313,7 @@ extension UIViewController {
         self.tabBarController?.tabBar.isTranslucent = translucent;
     }
     
+    
     /**
          Presents UIAlertController to notify you need to change the setting for this app to do something and provide button to open Settings App.
          - parameter title: title of UIAlertController to present
@@ -301,10 +322,10 @@ extension UIViewController {
          - parameter titleForOK: title of "OK" button
          - parameter titleForSettings: title of "Settings" button
     */
-    public func openSettingsOrCancel(title: String = "Something is disabled", msg: String = "Please enable to do something", style: UIAlertControllerStyle = .alert, titleForOK: String = "OK", titleForSettings: String = "Settings"){
+    public func openSettingsOrCancel(title: String = "Something is disabled", msg: String = "Please enable to do something", style: UIAlertController.Style = .alert, titleForOK: String = "OK", titleForSettings: String = "Settings", cancelHandler: @escaping (UIAlertAction) -> Void){
         let acts = [UIAlertAction(title: titleForSettings, style: .default, handler: { (act) in
             UIApplication.shared.openSettings();
-        }), UIAlertAction(title: titleForOK, style: .default, handler: nil)];
+        }), UIAlertAction(title: titleForOK, style: .default, handler: cancelHandler)];
         self.showAlert(title: title, msg: msg, actions: acts, style: style);
     }
     
@@ -324,7 +345,7 @@ extension UIViewController {
          - parameter applicationActivities: app filter to shared
          - parameter completion: block to be called when presenting share activity has been completed
     */
-    public func share(_ activityItems: [Any], applicationActivities: [UIActivity]? = nil, excludedActivities: [UIActivityType] = [], completion: (() -> Void)? = nil){
+    public func share(_ activityItems: [Any], applicationActivities: [UIActivity]? = nil, excludedActivities: [UIActivity.ActivityType] = [], completion: (() -> Void)? = nil){
         let controller = UIActivityViewController.init(activityItems: activityItems, applicationActivities: applicationActivities);
         controller.popoverPresentationController?.sourceView = self.view;
         controller.excludedActivityTypes = excludedActivities;
@@ -341,7 +362,7 @@ extension UIViewController {
          - parameter handle: Handler for completion of presenting the alert
      */
     @discardableResult
-    public func showConfirm(title: String, msg: String, buttonTitle: String, style: UIAlertControllerStyle, handle: (() -> Void)? = nil) -> UIAlertController {
+    public func showConfirm(title: String, msg: String, buttonTitle: String, style: UIAlertController.Style, handle: (() -> Void)? = nil) -> UIAlertController {
         return self.showAlert(title: title, msg: msg, actions: [UIAlertAction.init(title: buttonTitle, style: .default, handler: { (act) in
             handle?();
         })], style: style);
@@ -387,13 +408,13 @@ extension UIViewController {
      */
     @discardableResult
     public func addEmbedView<T>(_ containerView : UIView, embedViewController viewController : T) -> T where T : UIViewController {
-        viewController.willMove(toParentViewController: self);
-        self.addChildViewController(viewController);
+        viewController.willMove(toParent: self);
+        self.addChild(viewController);
         containerView.addSubview(viewController.view);
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight];
         viewController.view.bounds = view.bounds;
         viewController.view.frame.origin = CGPoint.zero;
-        viewController.didMove(toParentViewController: self);
+        viewController.didMove(toParent: self);
         
         return viewController;
     }
@@ -430,32 +451,22 @@ extension UIViewController {
         - parameter configuration: safari configuration
     */
     @available(iOS 11.0, *)
-    public func openWithSafari(_ url: URL, configuration: SFSafariViewController.Configuration, animated: Bool = true){
-        let webView = SFSafariViewController.init(url: url, configuration: configuration);
+    open func openWithSafari(_ url: URL, configuration: SFSafariViewController.Configuration? = nil, barCollapsingEnabled: Bool = true, animated: Bool = true){
+        var config = configuration ?? SFSafariViewController.Configuration();
+        config.barCollapsingEnabled = barCollapsingEnabled;
+        let webView = SFSafariViewController.init(url: url, configuration: config);
+        
         self.present(webView, animated: animated, completion: nil);
     }
     
     /**
-         open url in the safari view with given configuration
-         - parameter url: url to open in the safari
+        open url in the safari view with given configuration
+        - parameter url: url to open in the safari
     */
-    public func openWithSafari(_ url: URL, animated: Bool = true){
-        let webView = SFSafariViewController(url: url);
+    open func openWithSafari(_ url: URL, animated: Bool = true){
+        let webView = SFSafariViewController.init(url: url);
+        
         self.present(webView, animated: animated, completion: nil);
-    }
-    
-    /**
-         identifiers for segues linked to this view controller
-     */
-    public var segueIdentifiers : [String]{
-        return (self.value(forKey: "storyboardSegueTemplates") as? [AnyObject] ?? []).compactMap{ $0.value(forKey: "identifier") as? String };
-    }
-    
-    /**
-         checks whether this view controller has specified segue by segue identifier
-     */
-    public func hasSegue(_ identifier : String) -> Bool{
-        return self.segueIdentifiers.contains(identifier);
     }
 }
 

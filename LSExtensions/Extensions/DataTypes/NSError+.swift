@@ -54,4 +54,11 @@ extension NSError{
         
         return value;
     }
+    
+    convenience init(error: Error, userInfo: [String : Any] = [:]) {
+        let nserror = error as NSError;
+        var info = nserror.userInfo;
+        info.merge(userInfo, uniquingKeysWith: { (current, _) in current });
+        self.init(domain: nserror.domain, code: nserror.code, userInfo: info);
+    }
 }

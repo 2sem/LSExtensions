@@ -104,7 +104,7 @@ extension UIButton{
          set attributed title with the plain title of this
          - parameter for: button state to set attibuted title
      */
-    open func makeTitleAttributed(for state: UIControlState = .normal){
+    open func makeTitleAttributed(for state: UIControl.State = .normal){
         guard let normalText = self.title(for: state) else{
             return;
         }
@@ -114,6 +114,31 @@ extension UIButton{
         }
         
         self.setAttributedTitle(normalText.attributed(font: font), for: state);
+    }
+    
+    /**
+        Set title for highlighted.
+        self.setTitle(self.title(for: .selected), for: [.highlighted]); is not working
+        State must has selected and normal.
+     */
+    open func setHighlightedTitleWithCurrentState(){
+        if self.isSelected{
+            self.setTitle(self.title(for: .selected), for: [.highlighted, .selected]);
+        }else{
+            self.setTitle(self.title(for: .normal), for: [.highlighted, .normal]);
+        }
+    }
+    
+    @IBInspectable
+    open var labelLineBreakModes : NSLineBreakMode{
+        get{
+//            return .byCharWrapping
+            return self.titleLabel?.lineBreakMode ?? .byTruncatingTail;
+        }
+
+        set{
+            self.titleLabel?.lineBreakMode = newValue;
+        }
     }
     
     /**

@@ -129,7 +129,7 @@ extension Array{
          - parameter left : first element to be compared
          - parameter right : second element to be compared
      */
-    public func distinct(_ comparer: ((_ left : Element, _ right : Element) -> Bool)? = nil) -> [Element]{
+    public func distinct(_ comparer: ((_ left : Element, _ right : Element) -> Bool)? = nil) -> [Element] where Element : Equatable{
         return self.reduce(into: [Element](), { (result, element) in
             if let comparer = comparer{
                 let isContain = result.contains(where: { comparer(element, $0) });

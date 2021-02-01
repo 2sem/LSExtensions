@@ -42,4 +42,31 @@ extension UIScrollView{
     public var height : CGFloat{
         return self.frame.height;
     }
+    
+    /// Moves content in this scroll view to center to keep center content
+    open func moveToCenter(){
+        let contentWidth = self.contentSize.width;
+        let x = self.bounds.width - contentWidth;
+        
+        let contentHeight = self.contentSize.height;
+        let y = self.bounds.height - contentHeight;
+        
+        guard x > 0 || y > 0 else{
+            self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
+            return;
+        }
+        
+        self.contentInset = UIEdgeInsets(top: y / 2, left: x / 2, bottom: 0, right: 0);
+        print("[\(#function)]set scrollView content offset[\(x / 2), \(y / 2)] inset[\(self.contentInset)]");
+    }
+    
+    /// Scroll to top(offset 0))
+    open func scrollToTop(){
+        self.setContentOffset(.init(x: 0, y: self.contentInset.top), animated: true);
+    }
+    
+    /// Scroll to bottom(offset content height - height)
+    open func scrollToBottom(){
+        self.setContentOffset(.init(x: 0, y: self.contentSize.height - self.frame.height + self.contentInset.bottom), animated: true);
+    }
 }

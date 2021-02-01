@@ -37,4 +37,15 @@ extension URL{
         
         try mng.copyItem(at: self, to: url);
     }
+    
+    /** Removes file which is exist at this URL if it is local file
+     - Parameter withSubFiles: Whether to remove sub files constained in this url
+    */
+    public func delete(_ withSubFiles: Bool = false ) throws{
+        let files = try FileManager.default.contentsOfDirectory(at: self, includingPropertiesForKeys: nil)
+        for file in files{
+            try file.delete(withSubFiles);
+        }
+        try FileManager.default.removeItem(at: self);
+    }
 }

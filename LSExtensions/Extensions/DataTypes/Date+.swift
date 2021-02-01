@@ -20,6 +20,34 @@ extension Date {
     }
     
     /**
+         Makes mid night time with this date
+     */
+    public var midNight : Date{
+        var components = Calendar.current.dateComponents(in: Calendar.current.timeZone, from: self);
+        components.setValue(23, for: .hour);
+        components.setValue(59, for: .minute);
+        components.setValue(59, for: .second);
+        components.setValue(999, for: .nanosecond);
+        
+        return Calendar.current.date(from: components)!;
+    }
+    
+    /// Whether this date's year month day is equal to Date()'s year, month, day
+    public var isToday : Bool{
+        return self.zeroDate == Date().zeroDate;
+    }
+    
+    /// alias for Date()
+    public static var now : Date{
+        return .init();
+    }
+    
+    /// alias for 1970-01-01
+    public static var min : Date{
+        return Date.init(timeIntervalSince1970: 0);
+    }
+    
+    /**
         Returns the formatted string with given date format
         - parameter format: Date format to make the formmated string with
      */

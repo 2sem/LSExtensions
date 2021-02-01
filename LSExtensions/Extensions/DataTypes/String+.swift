@@ -439,6 +439,40 @@ extension String {
     public func attributed(font: UIFont! = nil, color: UIColor? = nil, attributes: [NSAttributedString.Key : Any] = [:]) -> NSMutableAttributedString{
         return NSMutableAttributedString(self, font: font, foreground: color, attributes: attributes);
     }
+    
+    /** Returns default if given  value is nil. Otherwise returns original value
+        - Parameters:
+           - value: Original value to check if it is nil
+           - replace: Value to return instead of original value
+     */
+    public static func ifNil(value : String!, replace: String) -> String{
+        return value == nil ? replace : value;
+    }
+    
+    /** Returns whether any of given string values is contained in this string
+     - Parameter strings: String list to check if it is contained in
+    */
+    public func contains(strings: [String]) -> Bool{
+        return strings.contains(where: { self.contains($0) });
+    }
+    
+    
+    /// Returns whether this string contains any html tag
+    public func containsHtml() -> Bool{
+        return self.contains(strings: ["<p>", "<br>", "<br/>", "<br />", "</br>", "<html>", "<body>"]);
+    }
+    
+    //alias for String(format: ...);
+    public func asFormat(_ args: CVarArg...) -> String{
+        //String(format: self, locale: .current, arguments: args)
+        //return NSString.init(format: self, locale: .current, arguments: args);
+        //return String.init(format: self, arguments: args);
+        return withVaList(args) { (p) -> String in
+            return NSString.init(format: self, locale: nil, arguments: p) as String; //Locale.current
+            //"".appendingFormat(self, p);
+        }
+        //appendingFormat(_ format: NSString, _ args: CVarArg...) -> NSString
+    }
 }
 
 enum StringExtensionError : Error{

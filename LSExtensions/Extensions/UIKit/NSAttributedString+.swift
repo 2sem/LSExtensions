@@ -79,4 +79,9 @@ extension NSAttributedString{
         
         return styledText;
     }
+    
+    /// Returns mutable attributed string created with this
+    func mutable() -> NSMutableAttributedString{
+        return NSMutableAttributedString.init(attributedString: self);
+    }
 }
