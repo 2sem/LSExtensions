@@ -9,5 +9,13 @@
 import Foundation
 
 extension Decodable{
-    
+    //let res = try JSONDecoder().decode(SWClientEmptyResponse.self, from: data);
+    /// alias for JSONDecoder().decode
+    /// - Parameter data: data to decode
+    /// - Throws: decode error
+    /// - Returns: return decoded instance
+    public static func decode(json data: Data) throws -> Self{
+        return try JSONDecoder().decode(self.self, from: data);
+        //return try JSONDecoder().decode(self.self, from: data);
+    }
 }

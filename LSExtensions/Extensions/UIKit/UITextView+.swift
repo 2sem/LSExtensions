@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITextView{
-    static func fixBugForXCode112(){
+    public static func fixBugForXCode112(){
         if #available(iOS 13.2, *){
             return;
         }

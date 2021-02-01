@@ -433,12 +433,12 @@ import CoreTelephony
     }
     
     /// Increases app icon badge number
-    func increaseBadgeNumber(){
+    open func increaseBadgeNumber(){
         UIApplication.shared.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber.advanced(by: 1);
     }
     
     /// Decrease app icon badge number
-    func decreaseBadgeNumber(){
+    open func decreaseBadgeNumber(){
         UIApplication.shared.applicationIconBadgeNumber = max(UIApplication.shared.applicationIconBadgeNumber.advanced(by: -1), 0);
     }
 }
