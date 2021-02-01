@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C0177A821AD74C0003CDE7E /* Comparable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0177A721AD74C0003CDE7E /* Comparable+.swift */; };
-		2C105907209098800064E933 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C105906209098800064E933 /* UIImage+.swift */; };
 		2C10590B2090A2CC0064E933 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10590A2090A2CC0064E933 /* Notification+.swift */; };
 		2C1216E7208F333200B51D91 /* CNContact+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1216E6208F333200B51D91 /* CNContact+.swift */; };
 		2C122A2B2169BBD90051CEF9 /* WKWebView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C122A2A2169BBD90051CEF9 /* WKWebView+.swift */; };
@@ -96,7 +95,6 @@
 
 /* Begin PBXFileReference section */
 		2C0177A721AD74C0003CDE7E /* Comparable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+.swift"; sourceTree = "<group>"; };
-		2C105906209098800064E933 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		2C10590A2090A2CC0064E933 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		2C1216E6208F333200B51D91 /* CNContact+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNContact+.swift"; sourceTree = "<group>"; };
 		2C122A2A2169BBD90051CEF9 /* WKWebView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+.swift"; sourceTree = "<group>"; };
@@ -301,7 +299,6 @@
 				2C1316BD2102C5A10067D75A /* Error+.swift */,
 				2C1316AD2102C14D0067D75A /* Double+.swift */,
 				2C178B5D2158AFCF007353D3 /* Float+.swift */,
-				2C105906209098800064E933 /* UIImage+.swift */,
 				2CA5B431208A1F5F008DE954 /* String+.swift */,
 				2CA5B42F2089DF8A008DE954 /* Int+.swift */,
 				2CB03C2825C7F8C300E78363 /* Bool+.swift */,
@@ -590,7 +587,6 @@
 				2C2042122093497000132E57 /* UIWindow+.swift in Sources */,
 				2C1316D42102DB670067D75A /* UIBarButtonItem+.swift in Sources */,
 				2CB03B8F25C7ED8100E78363 /* CIFilter+.swift in Sources */,
-				2C105907209098800064E933 /* UIImage+.swift in Sources */,
 				2CA5B434208A24D3008DE954 /* Character+.swift in Sources */,
 				2C179ED121591B7600102B89 /* UIColor+.swift in Sources */,
 				2C14C07C210C097F00694D2C /* UIDevice+.swift in Sources */,
