@@ -14,9 +14,9 @@ extension NSNotification{
          Frame of Keyboard - UIKeyboardFrameBeginUserInfoKey
      */
     public var keyboardFrame : CGRect{
-        var value = (self.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue;
+        var value = (self.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue;
         if value.height <= 0{
-            value = (self.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+            value = (self.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         }
         
         return value;
@@ -26,6 +26,6 @@ extension NSNotification{
      Duration of Animation to appear Keyboard
     */
     public var keyboardAniDuration : TimeInterval{
-        return userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval;
+        return userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval;
     }
 }
