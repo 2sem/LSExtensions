@@ -48,7 +48,7 @@ extension String {
         }else{
             let bundle = Bundle(path: bundlePath!)!;
             
-            value = bundle.localizedString(forKey: self, value: defaultText ?? self, table: nil);
+            value = bundle.localizedString(forKey: self, value: defaultText ?? NSLocalizedString(self, comment: "") ?? self, table: nil);
         }
         
         return value;
