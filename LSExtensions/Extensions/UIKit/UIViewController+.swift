@@ -345,12 +345,14 @@ extension UIViewController {
          - parameter applicationActivities: app filter to shared
          - parameter completion: block to be called when presenting share activity has been completed
     */
-    public func share(_ activityItems: [Any], applicationActivities: [UIActivity]? = nil, excludedActivities: [UIActivity.ActivityType] = [], buttonToShow: UIBarButtonItem? = nil, completion: (() -> Void)? = nil){
+    public func share(_ activityItems: [Any], applicationActivities: [UIActivity]? = nil, excludedActivities: [UIActivity.ActivityType] = [], buttonToShow: UIBarButtonItem? = nil, sourceView: UIView? = nil, permittedArrowDirections: UIPopoverArrowDirection = [.any], completion: (() -> Void)? = nil){
         let controller = UIActivityViewController.init(activityItems: activityItems, applicationActivities: applicationActivities);
         if let buttonToShow = buttonToShow {
             controller.popoverPresentationController?.barButtonItem = buttonToShow;
         } else {
-            controller.popoverPresentationController?.sourceView = self.view;
+            controller.popoverPresentationController?.sourceView = sourceView ?? self.view;
+            controller.popoverPresentationController?.sourceRect = sourceView?.bounds ?? self.view.frame;
+            controller.popoverPresentationController?.permittedArrowDirections = permittedArrowDirections
         }
         
         controller.excludedActivityTypes = excludedActivities;
