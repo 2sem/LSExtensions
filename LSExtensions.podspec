@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
   #
   s.name         = "LSExtensions"
-  s.version      = "0.1.19"
+  s.version      = "0.1.20"
   s.swift_version = "5"
   s.summary      = "Collection of Usable Extension."
 
