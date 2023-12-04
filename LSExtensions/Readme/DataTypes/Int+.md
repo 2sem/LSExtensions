@@ -78,3 +78,5 @@ Checks limited integer by given max value
 Int.limit(11, max: 10) // 10
 Int.limit(9, max: 10) // 9
 ```
+
+[Article](https://medium.com/@toyboy2/lsextensions-usage-int-b9ccdc058bb7)

@@ -167,6 +167,8 @@
 		2CB03C2825C7F8C300E78363 /* Bool+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+.swift"; sourceTree = "<group>"; };
 		2CB03C2C25C7F8E700E78363 /* BinaryInteger+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+.swift"; sourceTree = "<group>"; };
 		2CB15DA52543C1A7000D296F /* ArraySlice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArraySlice+.swift"; sourceTree = "<group>"; };
+		2CB49B3F2B075F3300A66F38 /* Readme */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Readme; path = LSExtensions/Readme; sourceTree = "<group>"; };
+		2CC001802B19D6C3003E28F3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2CDE50F22205F32600F437D6 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		2CE26996208B279200DB03E4 /* Locale+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+.swift"; sourceTree = "<group>"; };
 		2CE2699A208B33D400DB03E4 /* LSExtensions.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LSExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -318,6 +320,8 @@
 		2C75E79E2087892B00F1EFE2 = {
 			isa = PBXGroup;
 			children = (
+				2CC001802B19D6C3003E28F3 /* README.md */,
+				2CB49B3F2B075F3300A66F38 /* Readme */,
 				2CE2699A208B33D400DB03E4 /* LSExtensions.podspec */,
 				2C75E7AA2087892B00F1EFE2 /* LSExtensions */,
 				2C75E7B52087892C00F1EFE2 /* LSExtensionsTests */,

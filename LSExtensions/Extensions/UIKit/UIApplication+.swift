@@ -230,7 +230,7 @@ import CoreTelephony
     }
     
     /**
-         Open Page Kakao Story//of specified User on Twitter App
+         Open Page Kakao Story of specified User  on Kakao App
          - parameter id: Kakao Story Account Name
          - parameter webOpen: Handler to open url
      */
@@ -250,12 +250,12 @@ import CoreTelephony
     }
     
     /**
-         Open Page Kakao Plus Friends//of specified User on Twitter App
+         Open Page Kakao Plus Friends of specified User on Kakao App
          - parameter id: Kakao Plus Account Name
          - parameter webOpen: Handler to open url
      */
     public func openKakaoPlus(_ id : String, webOpen: ((URL) -> Void)? = nil){
-        let storyUrl = URL(string: "https://pf.kaka.com/\(id)")!;
+        let storyUrl = URL(string: "https://pf.kakao.com/\(id)")!;
         if self.canOpenURL(storyUrl){
             self.openCompatible(storyUrl, options: [:], completionHandler: nil);
         }else{
