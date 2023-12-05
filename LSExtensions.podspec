@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
                     DESC
 
   s.homepage     = "https://github.com/2sem/LSExtensions"
-  s.readme     = "https://github.com/2sem/LSExtensions/blob/#{s.version}/README.md"
+#  s.readme     = "https://github.com/2sem/LSExtensions/blob/#{s.version}/README.md"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
