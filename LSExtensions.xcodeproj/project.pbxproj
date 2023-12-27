@@ -155,6 +155,9 @@
 		2C75E7B82087892C00F1EFE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C75E7C32087900600F1EFE2 /* UIApplication+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		2C7751A1208E25C0009B786D /* UITextField+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		2C88845D2B3ACDF900292764 /* Tests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tests; sourceTree = "<group>"; };
+		2C88845F2B3ACDFA00292764 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		2C8884602B3ACF1700292764 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2CA5B42F2089DF8A008DE954 /* Int+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		2CA5B431208A1F5F008DE954 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2CA5B433208A24D3008DE954 /* Character+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+.swift"; sourceTree = "<group>"; };
@@ -171,7 +174,7 @@
 		2CC001802B19D6C3003E28F3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2CDE50F22205F32600F437D6 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		2CE26996208B279200DB03E4 /* Locale+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+.swift"; sourceTree = "<group>"; };
-		2CE2699A208B33D400DB03E4 /* LSExtensions.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LSExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2CE2699A208B33D400DB03E4 /* LSExtensions.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LSExtensions.podspec; sourceTree = "<group>"; };
 		2CE2699C208B343F00DB03E4 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		2CE2699E208B344600DB03E4 /* NSNotification+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotification+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -320,6 +323,9 @@
 		2C75E79E2087892B00F1EFE2 = {
 			isa = PBXGroup;
 			children = (
+				2C8884602B3ACF1700292764 /* .gitignore */,
+				2C88845F2B3ACDFA00292764 /* Package.swift */,
+				2C88845D2B3ACDF900292764 /* Tests */,
 				2CC001802B19D6C3003E28F3 /* README.md */,
 				2CB49B3F2B075F3300A66F38 /* Readme */,
 				2CE2699A208B33D400DB03E4 /* LSExtensions.podspec */,
