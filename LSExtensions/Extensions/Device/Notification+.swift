@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 extension Notification{
     /**
          Frame of Keyboard - UIKeyboardFrameBeginUserInfoKey

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 extension UIColor{
     /**
         Create color with red, green, blue, opacity(alpha)
