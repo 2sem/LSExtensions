@@ -9,8 +9,10 @@
 import Foundation
 
 extension Int{
-    
+
     static let romans : [String] = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
+    static let romanValues = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    static let romanNumerals = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
     static let lowerAlphas : [String] = (UnicodeScalar("a").value...UnicodeScalar("z").value)
         .compactMap { String(UnicodeScalar($0)!) };
     static let upperAlphas : [String] = (UnicodeScalar("A").value...UnicodeScalar("Z").value)
@@ -19,12 +21,22 @@ extension Int{
                              "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];*/
     /**
      The roman number sequenced by this value
-        - Requires: Value should be less than 12(XII)
-        - Note: value start from 1
+        - Note: Converts positive integers to Roman numerals
     */
     public var roman : String{
-        let list = type(of: self).romans;
-        return list[self % list.count - 1];
+        guard self > 0 else { return "" }
+
+        var result = ""
+        var num = self
+
+        for (i, value) in type(of: self).romanValues.enumerated() {
+            while num >= value {
+                result += type(of: self).romanNumerals[i]
+                num -= value
+            }
+        }
+
+        return result
     }
     
     /**
