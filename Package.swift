@@ -18,10 +18,7 @@ let package = Package(
         .target(
             name: "LSExtensions",
             path: "LSExtensions",
-            exclude: ["LSExtensions.h", 
-                      "Info.plist",
-                      "Readme",
-                      "Extensions/Objc"]),
+            exclude: ["Readme"]),
         .testTarget(
             name: "LSExtensionsTests",
             dependencies: ["LSExtensions"]),

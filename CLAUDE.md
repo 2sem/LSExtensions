@@ -13,16 +13,13 @@ swift test
 
 # Run a single test
 swift test --filter LSExtensionsTests/testMethodName
-
-# Validate CocoaPods spec
-pod spec lint LSExtensions.podspec
 ```
 
 ## Architecture
 
-LSExtensions is a pure Swift extension library distributed via both CocoaPods and Swift Package Manager.
+LSExtensions is a pure Swift extension library distributed via Swift Package Manager.
 
-**Minimum targets:** iOS 13+ (SPM), iOS 9+ (CocoaPods)
+**Minimum target:** iOS 15+
 **No external dependencies.**
 
 ### Source Layout
@@ -44,14 +41,12 @@ All extensions live under `LSExtensions/Extensions/`, organized by framework:
 | `Thread/` | DispatchQueue |
 | `WebKit/` | WKWebView |
 
-The `LSExtensions/Extensions/Objc/` directory is excluded from the SPM target (CocoaPods only).
-`LSExtensions/Readme/` contains markdown docs for select extensions — excluded from both build targets.
+`LSExtensions/Readme/` contains markdown docs for select extensions — excluded from the build target.
 
-Tests are under `Tests/LSExtensionsTests/` (SPM) and `LSExtensionsTests/` (legacy Xcode target).
+Tests are under `Tests/LSExtensionsTests/`.
 
 ## Releasing
 
-1. Bump `s.version` in `LSExtensions.podspec`
+1. Bump the version in `Package.swift` (if needed) and create branch `a.b.c`
 2. Commit with message `bump: release a.b.c`
-3. Create branch named `a.b.c` (version number only)
-4. After merge, tag the commit with the version number so CocoaPods can resolve it via `{ :git => ..., :tag => "a.b.c" }`
+3. After merge, tag the commit with the version number for SPM resolution
